@@ -9,7 +9,7 @@ DATABASES = {
     'default': {
         'NAME': 'netbox',
         'USER': 'netbox',
-        'PASSWORD': 'netbox',
+        'PASSWORD': 'netbox1234!',
         'HOST': 'localhost',
         'PORT': '',
         'CONN_MAX_AGE': 300,
@@ -49,3 +49,7 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': True
 }
+
+DEBUG = True
+
+TIME_ZONE = 'Asia/Seoul'
