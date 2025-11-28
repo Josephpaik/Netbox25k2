@@ -29,6 +29,11 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NETBOX_CONFIGURATION: netbox.configuration_testing
+      DB_NAME: netbox
+      DB_USER: netbox
+      DB_PASSWORD: netbox1234!
+      DB_HOST: 127.0.0.1
+      DB_PORT: 5432
     strategy:
       matrix:
         python-version: ['3.10', '3.11', '3.12']
