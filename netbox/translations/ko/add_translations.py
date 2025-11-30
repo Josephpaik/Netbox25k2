@@ -201,7 +201,7 @@ TRANSLATIONS = {
     "Group": "그룹",
     "Priority": "우선순위",
     "priority": "우선순위",
-    "Weight": "가중치",
+    "Weight": "중량",
     "Count": "개수",
     "Value": "값",
     "Field": "필드",
@@ -300,7 +300,6 @@ TRANSLATIONS = {
     "Height": "높이",
     "Width": "너비",
     "Depth": "깊이",
-    "Weight": "무게",
     "Distance": "거리",
     "Distance unit": "거리 단위",
     "Length": "길이",
@@ -359,6 +358,7 @@ TRANSLATIONS = {
     "Decommissioned": "폐기됨",
 }
 
+
 def update_po_file():
     """Update the django.po file with Korean translations"""
     po_file = "/Users/josephpaik/Documents/GitHub/netbox251022/netbox/translations/ko/LC_MESSAGES/django.po"
@@ -407,7 +407,8 @@ def update_po_file():
     print(f"Total translations in dictionary: {len(TRANSLATIONS)}")
     return translations_added
 
+
 if __name__ == '__main__':
     count = update_po_file()
-    print(f"\n✓ Successfully updated Korean translations!")
+    print("\n✓ Successfully updated Korean translations!")
     print(f"✓ {count} strings translated")
