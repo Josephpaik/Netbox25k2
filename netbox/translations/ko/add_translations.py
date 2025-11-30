@@ -359,6 +359,7 @@ TRANSLATIONS = {
     "Decommissioned": "폐기됨",
 }
 
+
 def update_po_file():
     """Update the django.po file with Korean translations"""
     po_file = "/Users/josephpaik/Documents/GitHub/netbox251022/netbox/translations/ko/LC_MESSAGES/django.po"
@@ -407,7 +408,8 @@ def update_po_file():
     print(f"Total translations in dictionary: {len(TRANSLATIONS)}")
     return translations_added
 
+
 if __name__ == '__main__':
     count = update_po_file()
-    print(f"\n✓ Successfully updated Korean translations!")
+    print("\n✓ Successfully updated Korean translations!")
     print(f"✓ {count} strings translated")
