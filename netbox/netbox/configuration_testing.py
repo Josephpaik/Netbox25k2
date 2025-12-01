@@ -39,7 +39,7 @@ REDIS = {
     }
 }
 
-SECRET_KEY = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
+SECRET_KEY = '=&qK!UbZiy@TjK^Y^STWsJyKAB3ucg#j-v^uZFx#cJ+I1EAqj_'
 
 DEFAULT_PERMISSIONS = {}
 
