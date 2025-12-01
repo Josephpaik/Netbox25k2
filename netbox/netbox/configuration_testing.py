@@ -40,16 +40,11 @@ REDIS = {
 }
 
 SECRET_KEY = '=&qK!UbZiy@TjK^Y^STWsJyKAB3ucg#j-v^uZFx#cJ+I1EAqj_'
- 
 DEFAULT_PERMISSIONS = {}
-
 ALLOW_TOKEN_RETRIEVAL = True
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True
 }
-
 DEBUG = True
-
 TIME_ZONE = 'Asia/Seoul'
