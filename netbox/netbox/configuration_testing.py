@@ -9,7 +9,7 @@ DATABASES = {
     'default': {
         'NAME': 'netbox',
         'USER': 'netbox',
-        'PASSWORD': ${{ secrets.DB_PASSWORD }},
+        'PASSWORD': 'netbox1234!',
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'CONN_MAX_AGE': 300,
