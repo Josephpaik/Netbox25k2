@@ -16,11 +16,7 @@ TRANSLATIONS = {
     "Logged in as {user}.": "{user}(으)로 로그인되었습니다.",
     "You have logged out.": "로그아웃되었습니다.",
     "Your preferences have been updated.": "환경설정이 업데이트되었습니다.",
-    "LDAP-authenticated user credentials cannot be changed within NetBox.":
-    (
-     "LDAP 인증 사용자 자격 증명은 NetBox 내에서"
-     " 변경할 수 없습니다."
-    ),
+    "LDAP-authenticated user credentials cannot be changed within NetBox.": "LDAP자격증명은 NetBox내 변경 불가함",
     "Your password has been changed successfully.": "비밀번호가 성공적으로 변경되었습니다.",
     "Login": "로그인",
     "Logout": "로그아웃",
@@ -205,7 +201,7 @@ TRANSLATIONS = {
     "Group": "그룹",
     "Priority": "우선순위",
     "priority": "우선순위",
-    "Weight": "가중치",
+    "Weight": "중량",
     "Count": "개수",
     "Value": "값",
     "Field": "필드",
