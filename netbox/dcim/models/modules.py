@@ -7,7 +7,6 @@ from django.utils.translation import gettext_lazy as _
 from jsonschema.exceptions import ValidationError as JSONValidationError
 
 from dcim.choices import *
-from dcim.constants import MODULE_TOKEN
 from dcim.utils import update_interface_bridges
 from extras.models import ConfigContextModel, CustomField
 from netbox.models import PrimaryModel
@@ -316,6 +315,12 @@ class Module(PrimaryModel, ConfigContextModel):
                 for component in create_instances:
                     component.custom_field_data = cf_defaults
 
+            # Set denormalized references
+            for component in create_instances:
+                component._site = self.device.site
+                component._location = self.device.location
+                component._rack = self.device.rack
+
             if component_model is not ModuleBay:
                 component_model.objects.bulk_create(create_instances)
                 # Emit the post_save signal for each newly created object
@@ -331,7 +336,6 @@ class Module(PrimaryModel, ConfigContextModel):
             else:
                 # ModuleBays must be saved individually for MPTT
                 for instance in create_instances:
-                    instance.name = instance.name.replace(MODULE_TOKEN, str(self.module_bay.position))
                     instance.save()
 
             update_fields = ['module']

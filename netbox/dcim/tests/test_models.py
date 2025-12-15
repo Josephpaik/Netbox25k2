@@ -792,8 +792,80 @@ class ModuleBayTestCase(TestCase):
         )
         device.consoleports.first()
 
-    def test_nested_module_token(self):
-        pass
+    @tag('regression')  # #19918
+    def test_nested_module_bay_label_resolution(self):
+        """Test that nested module bay labels properly resolve {module} placeholders"""
+        manufacturer = Manufacturer.objects.first()
+        site = Site.objects.first()
+        device_role = DeviceRole.objects.first()
+
+        # Create device type with module bay template (position='A')
+        device_type = DeviceType.objects.create(
+            manufacturer=manufacturer,
+            model='Device with Bays',
+            slug='device-with-bays'
+        )
+        ModuleBayTemplate.objects.create(
+            device_type=device_type,
+            name='Bay A',
+            position='A'
+        )
+
+        # Create module type with nested bay template using {module} placeholder
+        module_type = ModuleType.objects.create(
+            manufacturer=manufacturer,
+            model='Module with Nested Bays'
+        )
+        ModuleBayTemplate.objects.create(
+            module_type=module_type,
+            name='SFP {module}-21',
+            label='{module}-21',
+            position='21'
+        )
+
+        # Create device and install module
+        device = Device.objects.create(
+            name='Test Device',
+            device_type=device_type,
+            role=device_role,
+            site=site
+        )
+        module_bay = device.modulebays.get(name='Bay A')
+        module = Module.objects.create(
+            device=device,
+            module_bay=module_bay,
+            module_type=module_type
+        )
+
+        # Verify nested bay label resolves {module} to parent position
+        nested_bay = module.modulebays.get(name='SFP A-21')
+        self.assertEqual(nested_bay.label, 'A-21')
+
+    @tag('regression')  # #20912
+    def test_module_bay_parent_cleared_when_module_removed(self):
+        """Test that the parent field is properly cleared when a module bay's module assignment is removed"""
+        device = Device.objects.first()
+        manufacturer = Manufacturer.objects.first()
+        module_type = ModuleType.objects.create(manufacturer=manufacturer, model='Test Module Type')
+        bay1 = ModuleBay.objects.create(device=device, name='Test Bay 1')
+        bay2 = ModuleBay.objects.create(device=device, name='Test Bay 2')
+
+        # Install a module in bay1
+        module1 = Module.objects.create(device=device, module_bay=bay1, module_type=module_type)
+
+        # Assign bay2 to module1 and verify parent is now set to bay1 (module1's bay)
+        bay2.module = module1
+        bay2.save()
+        bay2.refresh_from_db()
+        self.assertEqual(bay2.parent, bay1)
+        self.assertEqual(bay2.module, module1)
+
+        # Clear the module assignment (return bay2 to device level) Verify parent is cleared
+        bay2.module = None
+        bay2.save()
+        bay2.refresh_from_db()
+        self.assertIsNone(bay2.parent)
+        self.assertIsNone(bay2.module)
 
 
 class CableTestCase(TestCase):
@@ -967,6 +1039,18 @@ class CableTestCase(TestCase):
         with self.assertRaises(ValidationError):
             cable.clean()
 
+    def test_cannot_cable_to_mark_connected(self):
+        """
+        Test that a cable cannot be connected to an interface marked as connected.
+        """
+        device1 = Device.objects.get(name='TestDevice1')
+        interface1 = Interface.objects.get(device__name='TestDevice2', name='eth1')
+
+        mark_connected_interface = Interface(device=device1, name='mark_connected1', mark_connected=True)
+        cable = Cable(a_terminations=[mark_connected_interface], b_terminations=[interface1])
+        with self.assertRaises(ValidationError):
+            cable.clean()
+
 
 class VirtualDeviceContextTestCase(TestCase):
 
@@ -1019,3 +1103,92 @@ class VirtualDeviceContextTestCase(TestCase):
         vdc2 = VirtualDeviceContext(device=device, name="VDC 2", identifier=1, status='active')
         with self.assertRaises(ValidationError):
             vdc2.full_clean()
+
+
+class VirtualChassisTestCase(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        site = Site.objects.create(name='Test Site 1', slug='test-site-1')
+        manufacturer = Manufacturer.objects.create(name='Test Manufacturer 1', slug='test-manufacturer-1')
+        devicetype = DeviceType.objects.create(
+            manufacturer=manufacturer, model='Test Device Type 1', slug='test-device-type-1'
+        )
+        role = DeviceRole.objects.create(
+            name='Test Device Role 1', slug='test-device-role-1', color='ff0000'
+        )
+        Device.objects.create(
+            device_type=devicetype, role=role, name='TestDevice1', site=site
+        )
+        Device.objects.create(
+            device_type=devicetype, role=role, name='TestDevice2', site=site
+        )
+
+    def test_virtualchassis_deletion_clears_vc_position(self):
+        """
+        Test that when a VirtualChassis is deleted, member devices have their
+        vc_position and vc_priority fields set to None.
+        """
+        devices = Device.objects.all()
+        device1 = devices[0]
+        device2 = devices[1]
+
+        # Create a VirtualChassis with two member devices
+        vc = VirtualChassis.objects.create(name='Test VC', master=device1)
+
+        device1.virtual_chassis = vc
+        device1.vc_position = 1
+        device1.vc_priority = 10
+        device1.save()
+
+        device2.virtual_chassis = vc
+        device2.vc_position = 2
+        device2.vc_priority = 20
+        device2.save()
+
+        # Verify devices are members of the VC with positions set
+        device1.refresh_from_db()
+        device2.refresh_from_db()
+        self.assertEqual(device1.virtual_chassis, vc)
+        self.assertEqual(device1.vc_position, 1)
+        self.assertEqual(device1.vc_priority, 10)
+        self.assertEqual(device2.virtual_chassis, vc)
+        self.assertEqual(device2.vc_position, 2)
+        self.assertEqual(device2.vc_priority, 20)
+
+        # Delete the VirtualChassis
+        vc.delete()
+
+        # Verify devices have vc_position and vc_priority set to None
+        device1.refresh_from_db()
+        device2.refresh_from_db()
+        self.assertIsNone(device1.virtual_chassis)
+        self.assertIsNone(device1.vc_position)
+        self.assertIsNone(device1.vc_priority)
+        self.assertIsNone(device2.virtual_chassis)
+        self.assertIsNone(device2.vc_position)
+        self.assertIsNone(device2.vc_priority)
+
+    def test_virtualchassis_duplicate_vc_position(self):
+        """
+        Test that two devices cannot be assigned to the same vc_position
+        within the same VirtualChassis.
+        """
+        devices = Device.objects.all()
+        device1 = devices[0]
+        device2 = devices[1]
+
+        # Create a VirtualChassis
+        vc = VirtualChassis.objects.create(name='Test VC')
+
+        # Assign first device to vc_position 1
+        device1.virtual_chassis = vc
+        device1.vc_position = 1
+        device1.full_clean()
+        device1.save()
+
+        # Try to assign second device to the same vc_position
+        device2.virtual_chassis = vc
+        device2.vc_position = 1
+        with self.assertRaises(ValidationError):
+            device2.full_clean()

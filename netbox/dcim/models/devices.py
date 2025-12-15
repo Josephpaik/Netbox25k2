@@ -646,6 +646,10 @@ class Device(
         decimal_places=6,
         blank=True,
         null=True,
+        validators=[
+            MinValueValidator(decimal.Decimal('-90.0')),
+            MaxValueValidator(decimal.Decimal('90.0'))
+        ],
         help_text=_("GPS coordinate in decimal format (xx.yyyyyy)")
     )
     longitude = models.DecimalField(
@@ -654,6 +658,10 @@ class Device(
         decimal_places=6,
         blank=True,
         null=True,
+        validators=[
+            MinValueValidator(decimal.Decimal('-180.0')),
+            MaxValueValidator(decimal.Decimal('180.0'))
+        ],
         help_text=_("GPS coordinate in decimal format (xx.yyyyyy)")
     )
     services = GenericRelation(
@@ -949,6 +957,11 @@ class Device(
             if cf_defaults := CustomField.objects.get_defaults_for_model(model):
                 for component in components:
                     component.custom_field_data = cf_defaults
+            # Set denormalized references
+            for component in components:
+                component._site = self.site
+                component._location = self.location
+                component._rack = self.rack
             components = model.objects.bulk_create(components)
             # Prefetch related objects to minimize queries needed during post_save
             prefetch_fields = get_prefetchable_fields(model)
@@ -1154,7 +1167,6 @@ class VirtualChassis(PrimaryModel):
             })
 
     def delete(self, *args, **kwargs):
-
         # Check for LAG interfaces split across member chassis
         interfaces = Interface.objects.filter(
             device__in=self.members.all(),
@@ -1167,6 +1179,13 @@ class VirtualChassis(PrimaryModel):
                 "Unable to delete virtual chassis {self}. There are member interfaces which form a cross-chassis LAG "
                 "interfaces."
             ).format(self=self, interfaces=InterfaceSpeedChoices))
+
+        # Clear vc_position and vc_priority on member devices BEFORE calling super().delete()
+        # This must be done here because on_delete=SET_NULL executes before pre_delete signal
+        for device in self.members.all():
+            device.vc_position = None
+            device.vc_priority = None
+            device.save()
 
         return super().delete(*args, **kwargs)
 

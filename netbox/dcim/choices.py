@@ -461,6 +461,7 @@ class PowerPortTypeChoices(ChoiceSet):
     # Molex
     TYPE_MOLEX_MICRO_FIT_1X2 = 'molex-micro-fit-1x2'
     TYPE_MOLEX_MICRO_FIT_2X2 = 'molex-micro-fit-2x2'
+    TYPE_MOLEX_MICRO_FIT_2X3 = 'molex-micro-fit-2x3'
     TYPE_MOLEX_MICRO_FIT_2X4 = 'molex-micro-fit-2x4'
     # Direct current (DC)
     TYPE_DC = 'dc-terminal'
@@ -588,6 +589,7 @@ class PowerPortTypeChoices(ChoiceSet):
         ('Molex', (
             (TYPE_MOLEX_MICRO_FIT_1X2, 'Molex Micro-Fit 1x2'),
             (TYPE_MOLEX_MICRO_FIT_2X2, 'Molex Micro-Fit 2x2'),
+            (TYPE_MOLEX_MICRO_FIT_2X3, 'Molex Micro-Fit 2x3'),
             (TYPE_MOLEX_MICRO_FIT_2X4, 'Molex Micro-Fit 2x4'),
         )),
         ('DC', (
@@ -710,6 +712,7 @@ class PowerOutletTypeChoices(ChoiceSet):
     # Molex
     TYPE_MOLEX_MICRO_FIT_1X2 = 'molex-micro-fit-1x2'
     TYPE_MOLEX_MICRO_FIT_2X2 = 'molex-micro-fit-2x2'
+    TYPE_MOLEX_MICRO_FIT_2X3 = 'molex-micro-fit-2x3'
     TYPE_MOLEX_MICRO_FIT_2X4 = 'molex-micro-fit-2x4'
     # Direct current (DC)
     TYPE_DC = 'dc-terminal'
@@ -831,6 +834,7 @@ class PowerOutletTypeChoices(ChoiceSet):
         ('Molex', (
             (TYPE_MOLEX_MICRO_FIT_1X2, 'Molex Micro-Fit 1x2'),
             (TYPE_MOLEX_MICRO_FIT_2X2, 'Molex Micro-Fit 2x2'),
+            (TYPE_MOLEX_MICRO_FIT_2X3, 'Molex Micro-Fit 2x3'),
             (TYPE_MOLEX_MICRO_FIT_2X4, 'Molex Micro-Fit 2x4'),
         )),
         ('DC', (
@@ -1736,6 +1740,15 @@ class CableTypeChoices(ChoiceSet):
 
     # Copper - Coaxial
     TYPE_COAXIAL = 'coaxial'
+    TYPE_RG_6 = 'rg-6'
+    TYPE_RG_8 = 'rg-8'
+    TYPE_RG_11 = 'rg-11'
+    TYPE_RG_59 = 'rg-59'
+    TYPE_RG_62 = 'rg-62'
+    TYPE_RG_213 = 'rg-213'
+    TYPE_LMR_100 = 'lmr-100'
+    TYPE_LMR_200 = 'lmr-200'
+    TYPE_LMR_400 = 'lmr-400'
 
     # Fiber Optic - Multimode
     TYPE_MMF = 'mmf'
@@ -1785,6 +1798,15 @@ class CableTypeChoices(ChoiceSet):
             _('Copper - Coaxial'),
             (
                 (TYPE_COAXIAL, 'Coaxial'),
+                (TYPE_RG_6, 'RG-6'),
+                (TYPE_RG_8, 'RG-8'),
+                (TYPE_RG_11, 'RG-11'),
+                (TYPE_RG_59, 'RG-59'),
+                (TYPE_RG_62, 'RG-62'),
+                (TYPE_RG_213, 'RG-213'),
+                (TYPE_LMR_100, 'LMR-100'),
+                (TYPE_LMR_200, 'LMR-200'),
+                (TYPE_LMR_400, 'LMR-400'),
             ),
         ),
         (

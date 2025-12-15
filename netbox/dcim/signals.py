@@ -1,6 +1,6 @@
 import logging
 
-from django.db.models.signals import post_save, post_delete, pre_delete
+from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
 from dcim.choices import CableEndChoices, LinkStatusChoices
@@ -44,6 +44,9 @@ def handle_location_site_change(instance, created, **kwargs):
         Device.objects.filter(location__in=locations).update(site=instance.site)
         PowerPanel.objects.filter(location__in=locations).update(site=instance.site)
         CableTermination.objects.filter(_location__in=locations).update(_site=instance.site)
+        # Update component models for devices in these locations
+        for model in COMPONENT_MODELS:
+            model.objects.filter(device__location__in=locations).update(_site=instance.site)
 
 
 @receiver(post_save, sender=Rack)
@@ -53,6 +56,12 @@ def handle_rack_site_change(instance, created, **kwargs):
     """
     if not created:
         Device.objects.filter(rack=instance).update(site=instance.site, location=instance.location)
+        # Update component models for devices in this rack
+        for model in COMPONENT_MODELS:
+            model.objects.filter(device__rack=instance).update(
+                _site=instance.site,
+                _location=instance.location,
+            )
 
 
 @receiver(post_save, sender=Device)
@@ -83,18 +92,6 @@ def assign_virtualchassis_master(instance, created, **kwargs):
         master.virtual_chassis = instance
         master.vc_position = 1
         master.save()
-
-
-@receiver(pre_delete, sender=VirtualChassis)
-def clear_virtualchassis_members(instance, **kwargs):
-    """
-    When a VirtualChassis is deleted, nullify the vc_position and vc_priority fields of its prior members.
-    """
-    devices = Device.objects.filter(virtual_chassis=instance.pk)
-    for device in devices:
-        device.vc_position = None
-        device.vc_priority = None
-        device.save()
 
 
 #

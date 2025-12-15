@@ -291,6 +291,9 @@ DEFAULT_STORAGES = {
     },
     "scripts": {
         "BACKEND": "extras.storage.ScriptFileSystemStorage",
+        "OPTIONS": {
+            "allow_overwrite": True,
+        },
     },
 }
 STORAGES = DEFAULT_STORAGES | STORAGES
@@ -651,6 +654,13 @@ if SENTRY_ENABLED:
 # Calculate a unique deployment ID from the secret key
 DEPLOYMENT_ID = hashlib.sha256(SECRET_KEY.encode('utf-8')).hexdigest()[:16]
 CENSUS_URL = 'https://census.netbox.oss.netboxlabs.com/api/v1/'
+
+
+#
+# NetBox Copilot
+#
+
+NETBOX_COPILOT_URL = 'https://static.copilot.netboxlabs.ai/load.js'
 
 
 #

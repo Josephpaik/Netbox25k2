@@ -1,5 +1,111 @@
 # NetBox v4.4
 
+## v4.4.8 (2025-12-09)
+
+### Enhancements
+
+* [#20068](https://github.com/netbox-community/netbox/issues/20068) - Support the assignment of module type profile attributes via bulk import
+* [#20914](https://github.com/netbox-community/netbox/issues/20914) - Enable filtering device components by tenant assigned to device
+
+### Bug Fixes
+
+* [#19918](https://github.com/netbox-community/netbox/issues/19918) - Fix support for `{module}` resolution of components of child modules
+* [#20759](https://github.com/netbox-community/netbox/issues/20759) - Improve legibility of object types in permissions form
+* [#20860](https://github.com/netbox-community/netbox/issues/20860) - Ensure user-provided changelog message is recorded when creating device components via the UI
+* [#20878](https://github.com/netbox-community/netbox/issues/20878) - Use the active database connection when executing custom scripts
+* [#20888](https://github.com/netbox-community/netbox/issues/20888) - Resolve warnings about non-decimal values for min/max latitude & longitude fields
+
+---
+
+## v4.4.7 (2025-11-25)
+
+### Enhancements
+
+* [#20371](https://github.com/netbox-community/netbox/issues/20371) - Add Molex Micro-Fit 2x3 for power ports & power outlets
+* [#20731](https://github.com/netbox-community/netbox/issues/20731) - Enable specifying `data_source` & `data_file` when bulk import config templates
+* [#20820](https://github.com/netbox-community/netbox/issues/20820) - Enable filtering of custom fields by object type
+* [#20823](https://github.com/netbox-community/netbox/issues/20823) - Disallow creation of API tokens with an expiration date in the past
+* [#20841](https://github.com/netbox-community/netbox/issues/20841) - Support advanced filtering for available rack types when creating/editing a rack
+
+### Bug Fixes
+
+* [#20134](https://github.com/netbox-community/netbox/issues/20134) - Prevent out-of-band HTMX content swaps in embedded tables
+* [#20432](https://github.com/netbox-community/netbox/issues/20432) - Fix tracing of cables across multiple circuits in parallel
+* [#20465](https://github.com/netbox-community/netbox/issues/20465) - Ensure that scripts are updated immediately when a new file is uploaded
+* [#20638](https://github.com/netbox-community/netbox/issues/20638) - Correct OpenAPI schema for bulk create operations
+* [#20649](https://github.com/netbox-community/netbox/issues/20649) - Enforce view permissions on REST API endpoint for custom scripts
+* [#20740](https://github.com/netbox-community/netbox/issues/20740) - Ensure permissions constraints are enforced when executing custom scripts via the REST API
+* [#20743](https://github.com/netbox-community/netbox/issues/20743) - Pass request context to custom script when triggered by an event rule
+* [#20766](https://github.com/netbox-community/netbox/issues/20766) - Fix inadvertent translations on server error page
+* [#20775](https://github.com/netbox-community/netbox/issues/20775) - Fix `TypeError` exception when bulk renaming unnamed devices
+* [#20822](https://github.com/netbox-community/netbox/issues/20822) - Add missing `auto_sync_enabled` field in bulk edit forms
+* [#20827](https://github.com/netbox-community/netbox/issues/20827) - Fix UI styling issue when toggling between light and dark mode
+* [#20839](https://github.com/netbox-community/netbox/issues/20839) - Fix filtering by object type in UI for custom links and saved filters
+* [#20840](https://github.com/netbox-community/netbox/issues/20840) - Remove extraneous references to airflow for RackType model
+* [#20844](https://github.com/netbox-community/netbox/issues/20844) - Fix object type filter for L2VPN terminations
+* [#20859](https://github.com/netbox-community/netbox/issues/20859) - Prevent dashboard crash due to exception raised by a widget
+* [#20865](https://github.com/netbox-community/netbox/issues/20865) - Enforce proper min/max values for latitude & longitude fields
+
+---
+
+## v4.4.6 (2025-11-11)
+
+### Enhancements
+
+* [#14171](https://github.com/netbox-community/netbox/issues/14171) - Support VLAN assignment for device & VM interfaces being bulk imported
+* [#20297](https://github.com/netbox-community/netbox/issues/20297) - Introduce additional coaxial cable types
+
+### Bug Fixes
+
+* [#20378](https://github.com/netbox-community/netbox/issues/20378) - Prevent exception when attempting to delete a data source utilized by a custom script
+* [#20645](https://github.com/netbox-community/netbox/issues/20645) - CSVChoiceField should defer to model field's default value when CSV field is empty
+* [#20647](https://github.com/netbox-community/netbox/issues/20647) - Improve handling of empty strings during bulk imports
+* [#20653](https://github.com/netbox-community/netbox/issues/20653) - Fix filtering of jobs by object type ID
+* [#20660](https://github.com/netbox-community/netbox/issues/20660) - Optimize loading of custom script modules from remote storage
+* [#20670](https://github.com/netbox-community/netbox/issues/20670) - Improve validation of related objects during bulk import
+* [#20688](https://github.com/netbox-community/netbox/issues/20688) - Suppress non-harmful "No active configuration revision found" warning message
+* [#20697](https://github.com/netbox-community/netbox/issues/20697) - Prevent duplication of signals which increment/decrement related object counts
+* [#20699](https://github.com/netbox-community/netbox/issues/20699) - Ensure proper ordering of changelog entries resulting from cascading deletions
+* [#20713](https://github.com/netbox-community/netbox/issues/20713) - Ensure a pre-change snapshot is recorded on virtual chassis members being added/removed
+* [#20721](https://github.com/netbox-community/netbox/issues/20721) - Fix breadcrumb navigation links in UI for background tasks
+* [#20738](https://github.com/netbox-community/netbox/issues/20738) - Deleting a virtual chassis should nullify the `vc_position` of all former members
+* [#20750](https://github.com/netbox-community/netbox/issues/20750) - Fix cloning of permissions when only one action is enabled
+* [#20755](https://github.com/netbox-community/netbox/issues/20755) - Prevent duplicate results under certain conditions when filtering providers
+* [#20771](https://github.com/netbox-community/netbox/issues/20771) - Comments are required when creating a new journal entry
+* [#20774](https://github.com/netbox-community/netbox/issues/20774) - Bulk action button labels should be translated
+
+---
+
+## v4.4.5 (2025-10-28)
+
+### Enhancements
+
+* [#19751](https://github.com/netbox-community/netbox/issues/19751) - Disable occupied module bays in form dropdowns when installing a new module
+* [#20301](https://github.com/netbox-community/netbox/issues/20301) - Add a "dismiss all" option to the notifications dropdown
+* [#20399](https://github.com/netbox-community/netbox/issues/20399) - Add `assigned` and `primary` boolean filters for MAC addresses
+* [#20567](https://github.com/netbox-community/netbox/issues/20567) - Add contacts column to services table
+* [#20675](https://github.com/netbox-community/netbox/issues/20675) - Enable [NetBox Copilot](https://netboxlabs.com/products/netbox-copilot/) integration
+* [#20692](https://github.com/netbox-community/netbox/issues/20692) - Add contacts column to IP addresses table
+* [#20700](https://github.com/netbox-community/netbox/issues/20700) - Add contacts table column for various additional models
+
+### Bug Fixes
+
+* [#19872](https://github.com/netbox-community/netbox/issues/19872) - Ensure custom script validation failures display error messages
+* [#20389](https://github.com/netbox-community/netbox/issues/20389) - Fix "select all" behavior for bulk rename views
+* [#20422](https://github.com/netbox-community/netbox/issues/20422) - Enable filtering of aggregates and prefixes by family in GraphQL API
+* [#20459](https://github.com/netbox-community/netbox/issues/20459) - Fix validation of `is_oob` & `is_primary` fields under IP address bulk import
+* [#20466](https://github.com/netbox-community/netbox/issues/20466) - Fix querying of devices with a primary IP assigned in GraphQL API
+* [#20498](https://github.com/netbox-community/netbox/issues/20498) - Enforce the validation regex (if set) for custom URL fields
+* [#20524](https://github.com/netbox-community/netbox/issues/20524) - Raise a validation error when attempting to schedule a custom script for a past date/time
+* [#20541](https://github.com/netbox-community/netbox/issues/20541) - Fix resolution of GraphQL object fields which rely on custom filters
+* [#20551](https://github.com/netbox-community/netbox/issues/20551) - Fix automatic slug generation in quick-add UI form
+* [#20606](https://github.com/netbox-community/netbox/issues/20606) - Enable copying of values from table columns rendered as badges
+* [#20641](https://github.com/netbox-community/netbox/issues/20641) - Fix `AttributeError` exception raised by the object changes REST API endpoint
+* [#20646](https://github.com/netbox-community/netbox/issues/20646) - Prevent cables from connecting to objects marked as connected
+* [#20655](https://github.com/netbox-community/netbox/issues/20655) - Fix `FieldError` exception when attempting to sort permissions list by actions
+
+---
+
 ## v4.4.4 (2025-10-15)
 
 ### Bug Fixes

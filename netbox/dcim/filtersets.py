@@ -1288,7 +1288,6 @@ class DeviceFilterSet(
             Q(name__icontains=value) |
             Q(virtual_chassis__name__icontains=value) |
             Q(serial__icontains=value.strip()) |
-            Q(inventoryitems__serial__icontains=value.strip()) |
             Q(asset_tag__icontains=value.strip()) |
             Q(description__icontains=value.strip()) |
             Q(comments__icontains=value) |
@@ -1626,6 +1625,17 @@ class DeviceComponentFilterSet(django_filters.FilterSet):
     device_status = django_filters.MultipleChoiceFilter(
         choices=DeviceStatusChoices,
         field_name='device__status',
+    )
+    tenant_id = django_filters.ModelMultipleChoiceFilter(
+        field_name='device__tenant',
+        queryset=Tenant.objects.all(),
+        label=_('Tenant (ID)'),
+    )
+    tenant = django_filters.ModelMultipleChoiceFilter(
+        field_name='device__tenant__slug',
+        queryset=Tenant.objects.all(),
+        to_field_name='slug',
+        label=_('Tenant (slug)'),
     )
 
     def search(self, queryset, name, value):
