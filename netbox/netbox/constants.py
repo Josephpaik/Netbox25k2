@@ -1,3 +1,5 @@
+from django.utils.translation import gettext_lazy as _
+
 CORE_APPS = (
     'account',
     'circuits',
@@ -59,4 +61,4 @@ CENSOR_TOKEN = '********'
 CENSOR_TOKEN_CHANGED = '***CHANGED***'
 
 # Placeholder text for empty tables
-EMPTY_TABLE_TEXT = 'No results found'
+EMPTY_TABLE_TEXT = _('No results found')

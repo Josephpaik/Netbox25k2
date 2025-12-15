@@ -18,6 +18,30 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: manual\n"
 
+#: netbox/netbox/forms/mixins.py:22
+msgid "Changelog message"
+msgstr "변경 메시지"
+
+#: netbox/netbox/constants.py:64
+msgid "No results found"
+msgstr "결과 없음"
+
+#: netbox/dcim/views.py:800
+msgid "Name (A-Z)"
+msgstr "이름 (A-Z)"
+
+#: netbox/dcim/views.py:801
+msgid "Name (Z-A)"
+msgstr "이름 (Z-A)"
+
+#: netbox/dcim/views.py:802
+msgid "Facility ID (A-Z)"
+msgstr "시설 ID (A-Z)"
+
+#: netbox/dcim/views.py:803
+msgid "Facility ID (Z-A)"
+msgstr "시설 ID (Z-A)"
+
 #: netbox/account/tables.py:27 netbox/templates/account/token.html:22
 #: netbox/templates/users/token.html:17 netbox/users/forms/bulk_import.py:39
 #: netbox/users/forms/model_forms.py:119

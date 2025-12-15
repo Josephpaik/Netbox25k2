@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk:*)",
+      "Bash(msgfmt:*)",
+      "Bash(python manage.py makemessages:*)",
+      "Bash(python3 manage.py:*)",
+      "Bash(python3:*)",
+      "Bash(command -v msgfmt:*)",
+      "Bash(/usr/bin/which:*)",
+      "Bash(brew list:*)",
+      "Bash(git -C /Users/josephpaik/Documents/GitHub/netbox251022 ls-files:*)",
+      "Bash(/Users/josephpaik/Desktop/netbox/venv/bin/python3:*)",
+      "Bash(cat:*)",
+      "Bash(sed:*)",
+      "Bash(cp:*)",
+      "Bash(python:*)",
+      "Bash(command -v:*)",
+      "Bash(ruff check:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(find:*)",
+      "Bash(yarn bundle:scripts)",
+      "Bash(npm --version)",
+      "Bash(npm run bundle:scripts:*)",
+      "Bash(npm install:*)",
+      "Bash(xargs:*)",
+      "Bash(git restore:*)",
+      "Bash(git status:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

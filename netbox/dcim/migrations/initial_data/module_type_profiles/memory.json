@@ -1,10 +1,10 @@
 {
-    "name": "Memory",
+    "name": "메모리",
     "schema": {
         "properties": {
             "class": {
                 "type": "string",
-                "title": "Memory class",
+                "title": "메모리 클래스",
                 "enum": [
                     "DDR3",
                     "DDR4",
@@ -14,18 +14,18 @@
             },
             "size": {
                 "type": "integer",
-                "title": "Size (GB)",
-                "description": "Raw capacity of the module"
+                "title": "크기 (GB)",
+                "description": "모듈의 원시 용량"
             },
             "data_rate": {
                 "type": "integer",
-                "title": "Data rate",
-                "description": "Speed in MT/s"
+                "title": "데이터 레이트",
+                "description": "속도 (MT/s)"
             },
             "ecc": {
                 "type": "boolean",
                 "title": "ECC",
-                "description": "Error-correcting code is enabled"
+                "description": "오류 정정 코드 활성화 여부"
             }
         },
         "required": [

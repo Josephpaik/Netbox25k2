@@ -4,16 +4,17 @@
         "properties": {
             "architecture": {
                 "type": "string",
-                "title": "Architecture"
+                "title": "아키텍처"
             },
             "speed": {
                 "type": "number",
-                "title": "Speed",
-                "description": "Clock speed in GHz"
+                "title": "속도",
+                "description": "클럭 속도 (GHz)"
             },
             "cores": {
                 "type": "integer",
-                "description": "Number of cores present"
+                "title": "코어",
+                "description": "코어 수"
             }
         }
     }

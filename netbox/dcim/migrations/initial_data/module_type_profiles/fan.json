@@ -1,11 +1,11 @@
 {
-    "name": "Fan",
+    "name": "팬",
     "schema": {
         "properties": {
             "rpm": {
                 "type": "integer",
                 "title": "RPM",
-                "description": "Fan speed (RPM)"
+                "description": "팬 속도 (RPM)"
             }
         }
     }
