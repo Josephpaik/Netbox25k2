@@ -17090,3 +17090,67 @@ msgstr "잘못된 채널 값: {channel}"
 #, python-brace-format
 msgid "Invalid channel attribute: {name}"
 msgstr "잘못된 채널 속성: {name}"
+
+# New translations added from upstream v4.4.8
+msgid "An error was encountered when attempting to render this widget:"
+msgstr "이 위젯을 렌더링하는 중 오류가 발생했습니다:"
+
+msgid "Assigned Q-in-Q Service VLAN ID (filtered by VLAN group)"
+msgstr "할당된 Q-in-Q 서비스 VLAN ID (VLAN 그룹으로 필터링됨)"
+
+msgid "Assigned untagged VLAN ID (filtered by VLAN group)"
+msgstr "할당된 태그 없는 VLAN ID (VLAN 그룹으로 필터링됨)"
+
+msgid "Attribute values for the assigned profile, passed as a dictionary"
+msgstr "할당된 프로파일의 속성 값, 딕셔너리로 전달됨"
+
+msgid "Auto Sync Enabled"
+msgstr "자동 동기화 활성화됨"
+
+msgid "Auto sync enabled"
+msgstr "자동 동기화 활성화됨"
+
+msgid "Data file containing the template code"
+msgstr "템플릿 코드가 포함된 데이터 파일"
+
+msgid "Data source which provides the data file"
+msgstr "데이터 파일을 제공하는 데이터 소스"
+
+msgid "Dismiss %(count)s unread notification?"
+msgstr "%(count)s개의 읽지 않은 알림을 삭제하시겠습니까?"
+
+msgid "Dismiss all"
+msgstr "모두 삭제"
+
+msgid "Dismiss all unread notifications"
+msgstr "읽지 않은 알림 모두 삭제"
+
+msgid "Enable the NetBox Copilot AI agent"
+msgstr "NetBox Copilot AI 에이전트 활성화"
+
+msgid "Filter VLANs available for assignment by group"
+msgstr "그룹별로 할당 가능한 VLAN 필터링"
+
+msgid "Must be a dictionary."
+msgstr "딕셔너리여야 합니다."
+
+msgid "Must be a list."
+msgstr "리스트여야 합니다."
+
+msgid "NetBox Copilot"
+msgstr "NetBox Copilot"
+
+msgid "NetBox Copilot enabled"
+msgstr "NetBox Copilot 활성화됨"
+
+msgid "Object with ID {id} does not exist"
+msgstr "ID가 {id}인 객체가 존재하지 않습니다"
+
+msgid "Please try reconfiguring the widget, or remove it from your dashboard."
+msgstr "위젯을 다시 설정하거나 대시보드에서 제거해 주세요."
+
+msgid "Profile must be specified if attribute data is provided."
+msgstr "속성 데이터가 제공된 경우 프로파일을 지정해야 합니다."
+
+msgid "Type Options"
+msgstr "유형 옵션"
