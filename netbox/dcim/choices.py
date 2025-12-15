@@ -39,11 +39,11 @@ class LocationStatusChoices(ChoiceSet):
     STATUS_RETIRED = 'retired'
 
     CHOICES = [
-        (STATUS_PLANNED, 'Planned', 'cyan'),
-        (STATUS_STAGING, 'Staging', 'blue'),
-        (STATUS_ACTIVE, 'Active', 'green'),
-        (STATUS_DECOMMISSIONING, 'Decommissioning', 'yellow'),
-        (STATUS_RETIRED, 'Retired', 'red'),
+        (STATUS_PLANNED, _('Planned'), 'cyan'),
+        (STATUS_STAGING, _('Staging'), 'blue'),
+        (STATUS_ACTIVE, _('Active'), 'green'),
+        (STATUS_DECOMMISSIONING, _('Decommissioning'), 'yellow'),
+        (STATUS_RETIRED, _('Retired'), 'red'),
     ]
 
 

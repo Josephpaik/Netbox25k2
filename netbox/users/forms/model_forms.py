@@ -295,15 +295,19 @@ class ObjectPermissionForm(forms.ModelForm):
         help_text=_('Select the types of objects to which the permission will appy.')
     )
     can_view = forms.BooleanField(
+        label=_('Can View'),
         required=False
     )
     can_add = forms.BooleanField(
+        label=_('Can Add'),
         required=False
     )
     can_change = forms.BooleanField(
+        label=_('Can Change'),
         required=False
     )
     can_delete = forms.BooleanField(
+        label=_('Can Delete'),
         required=False
     )
     actions = SimpleArrayField(

@@ -31,6 +31,13 @@ interface Window {
    * Bootstrap Tooltip Instance.
    */
   Tooltip: typeof import('bootstrap').Tooltip;
+
+  /**
+   * NetBox i18n translations for JavaScript.
+   */
+  NETBOX_I18N?: {
+    no_results?: string;
+  };
 }
 
 /**

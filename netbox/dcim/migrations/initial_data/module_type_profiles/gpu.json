@@ -4,6 +4,7 @@
         "properties": {
             "interface": {
                 "type": "string",
+                "title": "인터페이스",
                 "enum": [
                     "PCIe 4.0",
                     "PCIe 4.0 x8",
@@ -17,8 +18,8 @@
             },
             "memory": {
                 "type": "integer",
-                "title": "Memory (GB)",
-                "description": "Total memory capacity (in GB)"
+                "title": "메모리 (GB)",
+                "description": "총 메모리 용량 (GB)"
             }
         },
         "required": [
