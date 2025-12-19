@@ -31,12 +31,13 @@ class NetBoxUploader:
 
     # CSV 파일과 API 엔드포인트 매핑
     CSV_TO_ENDPOINT = {
-        '01_sites.csv': 'dcim/sites',
-        '02_manufacturers.csv': 'dcim/manufacturers',
-        '03_device_roles.csv': 'dcim/device-roles',
-        '04_device_types.csv': 'dcim/device-types',
-        '05_locations.csv': 'dcim/locations',
-        '06_racks.csv': 'dcim/racks',
+        '00_tags_devices.csv': 'extras/tags',
+        '01_sites(조직-사이트).csv': 'dcim/sites',
+        '02_manufacturers(제조업체).csv': 'dcim/manufacturers',
+        '03_device_roles(장치역할).csv': 'dcim/device-roles',
+        '04_device_types(장치유형).csv': 'dcim/device-types',
+        '05_locations(사이트-위치).csv': 'dcim/locations',
+        '06_racks-1_rack_type없는 데이터.csv': 'dcim/racks',
         '07_devices_datacenter.csv': 'dcim/devices',
         '08_devices_test.csv': 'dcim/devices',
         '09_interfaces.csv': 'dcim/interfaces',
@@ -166,7 +167,7 @@ class NetBoxUploader:
 
             # ForeignKey 해결 (site, manufacturer, device_type 등)
             if key in ('site', 'location', 'rack', 'manufacturer', 'device_role', 'device_type',
-                       'vlan', 'region', 'parent', 'tenant', 'vrf'):
+                       'vlan', 'region', 'parent', 'tenant', 'vrf', 'device'):
                 if key == 'site':
                     data[key] = self.resolve_foreign_key('dcim/sites', value, 'name')
                 elif key == 'location':
@@ -176,7 +177,8 @@ class NetBoxUploader:
                 elif key == 'manufacturer':
                     data[key] = self.resolve_foreign_key('dcim/manufacturers', value, 'name')
                 elif key == 'device_role':
-                    data[key] = self.resolve_foreign_key('dcim/device-roles', value, 'name')
+                    # NetBox v4.x uses 'role' instead of 'device_role'
+                    data['role'] = self.resolve_foreign_key('dcim/device-roles', value, 'name')
                 elif key == 'device_type':
                     data[key] = self.resolve_foreign_key('dcim/device-types', value, 'model')
                 elif key == 'vlan':
@@ -192,6 +194,8 @@ class NetBoxUploader:
                         data[key] = self.resolve_foreign_key('dcim/device-roles', value, 'name')
                     elif 'locations' in endpoint:
                         data[key] = self.resolve_foreign_key('dcim/locations', value, 'name')
+                elif key == 'device':
+                    data[key] = self.resolve_foreign_key('dcim/devices', value, 'name')
 
             # Boolean 변환
             elif key in ('is_full_depth', 'enabled', 'is_pool', 'desc_units', 'vm_role'):
@@ -212,9 +216,9 @@ class NetBoxUploader:
                 except ValueError:
                     data[key] = value
 
-            # Tags 처리 (세미콜론으로 구분)
+            # Tags 처리 (쉼표로 구분)
             elif key == 'tags':
-                data[key] = [{'name': tag.strip()} for tag in value.split(';') if tag.strip()]
+                data[key] = [{'name': tag.strip()} for tag in value.split(',') if tag.strip()]
 
             else:
                 data[key] = value

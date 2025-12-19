@@ -38,3 +38,44 @@ gateway,gateway,9c27b0,게이트웨이
 ipmi,ipmi,795548,IPMI/BMC 관리
 public,public,f44336,공인 IP/외부
 vpn,vpn,2196f3,VPN 연결
+production,production,4caf50,운영 환경
+hq,hq,2196f3,본사
+server,server,03a9f4,서버 장비
+enterprise,enterprise,9c27b0,엔터프라이즈급
+network,network,ff9800,네트워크 장비
+datacenter,datacenter,607d8b,데이터센터
+security,security,e91e63,보안 장비
+custom,custom,795548,커스텀/자체제작
+core,core,f44336,코어 계층
+distribution,distribution,ff5722,분배 계층
+access,access,ffc107,액세스 계층
+firewall,firewall,e91e63,방화벽
+lb,lb,9c27b0,로드밸런서
+web,web,2196f3,웹 서비스
+app,app,03a9f4,애플리케이션
+database,database,00bcd4,데이터베이스
+storage,storage,795548,스토리지
+mail,mail,4caf50,메일 서비스
+dns,dns,8bc34a,DNS 서비스
+ad,ad,cddc39,Active Directory
+monitoring,monitoring,ffc107,모니터링
+product,product,9c27b0,제품
+test,test,9e9e9e,테스트
+temporary,temporary,9e9e9e,임시
+lab,lab,8bc34a,실험실
+infrastructure,infrastructure,607d8b,인프라
+power,power,ff5722,전원
+longterm,longterm,795548,장기
+high-performance,high-performance,f44336,고성능
+1u,1u,607d8b,1U 폼팩터
+2u,2u,795548,2U 폼팩터
+hpc,hpc,f44336,고성능 컴퓨팅
+switch,switch,ff9800,스위치 장비
+smb,smb,8bc34a,중소기업용
+application,application,03a9f4,애플리케이션
+dev,dev,8bc34a,개발 환경
+virtualization,virtualization,9c27b0,가상화
+spare,spare,9e9e9e,예비
+short-term,short-term,ffc107,단기
+mid-term,mid-term,ff9800,중기
+long-term,long-term,f44336,장기
