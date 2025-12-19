@@ -1,0 +1,40 @@
+name,slug,color,description
+router,router,4caf50,라우터 장비
+primary,primary,2196f3,Primary/Active 역할
+standby,standby,9e9e9e,Standby/Backup 역할
+active,active,4caf50,Active 상태
+saas,saas,9c27b0,SaaS 서비스용
+api,api,00bcd4,API 서비스
+oracle,oracle,ff5722,Oracle 데이터베이스
+mysql,mysql,ff9800,MySQL 데이터베이스
+nas,nas,795548,NAS 스토리지
+backup,backup,607d8b,백업용
+dc,dc,2196f3,Domain Controller
+logging,logging,ffc107,로깅 시스템
+development,development,8bc34a,개발 환경
+docker,docker,2196f3,Docker 컨테이너
+staging,staging,ff9800,스테이징 환경
+kubernetes,kubernetes,326ce5,Kubernetes 클러스터
+esxi,esxi,607d8b,VMware ESXi 호스트
+sg3000,sg3000,e91e63,SecureGate SG-3000 모델
+sg5000,sg5000,9c27b0,SecureGate SG-5000 모델
+sg1000,sg1000,ff9800,SecureGate SG-1000 모델
+certification,certification,4caf50,인증 테스트
+beta,beta,ff9800,베타 테스트
+compatibility,compatibility,00bcd4,호환성 테스트
+uplink,uplink,2196f3,업링크 연결
+wan,wan,f44336,WAN 연결
+trunk,trunk,9c27b0,트렁크 포트
+outside,outside,f44336,외부 인터페이스
+inside,inside,4caf50,내부 인터페이스
+dmz,dmz,ff9800,DMZ 영역
+lan,lan,4caf50,LAN 연결
+mgmt,mgmt,607d8b,관리용 인터페이스
+private,private,795548,Private 네트워크
+rac,rac,ff5722,Oracle RAC 연결
+external,external,f44336,외부 서비스
+management,management,607d8b,관리 네트워크
+gateway,gateway,9c27b0,게이트웨이
+ipmi,ipmi,795548,IPMI/BMC 관리
+public,public,f44336,공인 IP/외부
+vpn,vpn,2196f3,VPN 연결
