@@ -1,0 +1,81 @@
+name,slug,color,description
+router,router,4caf50,라우터 장비
+primary,primary,2196f3,Primary/Active 역할
+standby,standby,9e9e9e,Standby/Backup 역할
+active,active,4caf50,Active 상태
+saas,saas,9c27b0,SaaS 서비스용
+api,api,00bcd4,API 서비스
+oracle,oracle,ff5722,Oracle 데이터베이스
+mysql,mysql,ff9800,MySQL 데이터베이스
+nas,nas,795548,NAS 스토리지
+backup,backup,607d8b,백업용
+dc,dc,2196f3,Domain Controller
+logging,logging,ffc107,로깅 시스템
+development,development,8bc34a,개발 환경
+docker,docker,2196f3,Docker 컨테이너
+staging,staging,ff9800,스테이징 환경
+kubernetes,kubernetes,326ce5,Kubernetes 클러스터
+esxi,esxi,607d8b,VMware ESXi 호스트
+sg3000,sg3000,e91e63,SecureGate SG-3000 모델
+sg5000,sg5000,9c27b0,SecureGate SG-5000 모델
+sg1000,sg1000,ff9800,SecureGate SG-1000 모델
+certification,certification,4caf50,인증 테스트
+beta,beta,ff9800,베타 테스트
+compatibility,compatibility,00bcd4,호환성 테스트
+uplink,uplink,2196f3,업링크 연결
+wan,wan,f44336,WAN 연결
+trunk,trunk,9c27b0,트렁크 포트
+outside,outside,f44336,외부 인터페이스
+inside,inside,4caf50,내부 인터페이스
+dmz,dmz,ff9800,DMZ 영역
+lan,lan,4caf50,LAN 연결
+mgmt,mgmt,607d8b,관리용 인터페이스
+private,private,795548,Private 네트워크
+rac,rac,ff5722,Oracle RAC 연결
+external,external,f44336,외부 서비스
+management,management,607d8b,관리 네트워크
+gateway,gateway,9c27b0,게이트웨이
+ipmi,ipmi,795548,IPMI/BMC 관리
+public,public,f44336,공인 IP/외부
+vpn,vpn,2196f3,VPN 연결
+production,production,4caf50,운영 환경
+hq,hq,2196f3,본사
+server,server,03a9f4,서버 장비
+enterprise,enterprise,9c27b0,엔터프라이즈급
+network,network,ff9800,네트워크 장비
+datacenter,datacenter,607d8b,데이터센터
+security,security,e91e63,보안 장비
+custom,custom,795548,커스텀/자체제작
+core,core,f44336,코어 계층
+distribution,distribution,ff5722,분배 계층
+access,access,ffc107,액세스 계층
+firewall,firewall,e91e63,방화벽
+lb,lb,9c27b0,로드밸런서
+web,web,2196f3,웹 서비스
+app,app,03a9f4,애플리케이션
+database,database,00bcd4,데이터베이스
+storage,storage,795548,스토리지
+mail,mail,4caf50,메일 서비스
+dns,dns,8bc34a,DNS 서비스
+ad,ad,cddc39,Active Directory
+monitoring,monitoring,ffc107,모니터링
+product,product,9c27b0,제품
+test,test,9e9e9e,테스트
+temporary,temporary,9e9e9e,임시
+lab,lab,8bc34a,실험실
+infrastructure,infrastructure,607d8b,인프라
+power,power,ff5722,전원
+longterm,longterm,795548,장기
+high-performance,high-performance,f44336,고성능
+1u,1u,607d8b,1U 폼팩터
+2u,2u,795548,2U 폼팩터
+hpc,hpc,f44336,고성능 컴퓨팅
+switch,switch,ff9800,스위치 장비
+smb,smb,8bc34a,중소기업용
+application,application,03a9f4,애플리케이션
+dev,dev,8bc34a,개발 환경
+virtualization,virtualization,9c27b0,가상화
+spare,spare,9e9e9e,예비
+short-term,short-term,ffc107,단기
+mid-term,mid-term,ff9800,중기
+long-term,long-term,f44336,장기
