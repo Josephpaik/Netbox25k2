@@ -1,0 +1,3160 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.netbox.dev/ko/configuration-ko/system/">
+      
+      
+        <link rel="prev" href="../required-parameters/">
+      
+      
+        <link rel="next" href="../security/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+  
+  
+    <meta name="robots" content="noindex">
+  
+
+    
+      
+        <title>시스템 - NetBox 한국어 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="NetBox 한국어 문서" class="md-header__button md-logo" aria-label="NetBox 한국어 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NetBox 한국어 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              시스템
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="https://docs.netbox.dev/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="https://docs.netbox.dev/ko/" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/netbox-community/netbox" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    netbox-community/netbox
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NetBox 한국어 문서" class="md-nav__button md-logo" aria-label="NetBox 한국어 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NetBox 한국어 문서
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/netbox-community/netbox" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    netbox-community/netbox
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction_ko/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    소개
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    기능
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            기능
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/facilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    시설
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/devices-cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    장비 및 케이블링
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/power-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    전력 추적
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/ipam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPAM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/vlan-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VLAN 관리
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/l2vpn-overlay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L2VPN & 오버레이
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    회선
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    무선
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    가상화
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/vpn-tunnels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VPN 터널
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/tenancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    테넌시
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    연락처
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    검색
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/context-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    컨텍스트 데이터
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/configuration-rendering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    구성 렌더링
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/synchronized-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    동기화 데이터
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/change-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    변경 로깅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/journaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    저널링
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/event-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    이벤트 규칙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/user-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    사용자 설정
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    알림
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/background-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    백그라운드 작업
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/authentication-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    인증 및 권한
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/api-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API 및 통합
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스터마이징
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    설치 및 업그레이드
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            설치 및 업그레이드
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox 설치
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/1-postgresql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. PostgreSQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/2-redis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Redis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/3-netbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. NetBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/4a-gunicorn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4a. Gunicorn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/5-http-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. HTTP 서버
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/upgrading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox 업그레이드
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    시작하기
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            시작하기
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started-ko/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    계획
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started-ko/populating-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    데이터 입력
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    구성
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            구성
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox 구성
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../required-parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    필수 파라미터
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    시스템
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    시스템
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      BASE_PATH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database_routers" class="md-nav__link">
+    <span class="md-ellipsis">
+      DATABASE_ROUTERS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default_language" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEFAULT_LANGUAGE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docs_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOCS_ROOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    <span class="md-ellipsis">
+      EMAIL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      HOSTNAME
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_proxies" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP_PROXIES
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal_ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTERNAL_IPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isolated_deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISOLATED_DEPLOYMENT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jinja2_filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      JINJA2_FILTERS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      LOGGING
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LOGGING">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      사용 가능한 로거
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      MEDIA_ROOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy_routers" class="md-nav__link">
+    <span class="md-ellipsis">
+      PROXY_ROUTERS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reports_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      REPORTS_ROOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripts_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      SCRIPTS_ROOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search_backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      SEARCH_BACKEND
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storages" class="md-nav__link">
+    <span class="md-ellipsis">
+      STORAGES
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STORAGES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      환경 변수 및 타사 라이브러리
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time_zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      TIME_ZONE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#translation_enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      TRANSLATION_ENABLED
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    보안
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphql-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphQL API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    원격 인증
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    데이터 및 유효성 검사
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../default-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    기본값
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    오류 보고
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    플러그인
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miscellaneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    기타
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    개발
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    커스터마이징
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            커스터마이징
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스텀 필드
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/custom-links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스텀 링크
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/custom-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스텀 유효성 검사
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    익스포트 템플릿
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    리포트
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/custom-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스텀 스크립트
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    통합
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            통합
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    REST API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/graphql-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphQL API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/webhooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    웹훅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/synchronized-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    동기화 데이터
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/prometheus-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prometheus 메트릭
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    관리
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            관리
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    인증
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            인증
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/authentication/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    개요
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/authentication/google/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/authentication/microsoft-entra-id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microsoft Entra ID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/authentication/okta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Okta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    권한
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/error-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    오류 보고
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/replicating-netbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox 복제
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/netbox-shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IDC 시나리오
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            IDC 시나리오
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../idc_scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    소개
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../idc_scenario/USAGE_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    사용 가이드
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    참고 자료
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            참고 자료
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetBox%20macOS%20%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C%20%28%ED%95%9C%EA%B8%80%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    macOS 설치 가이드
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      BASE_PATH
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database_routers" class="md-nav__link">
+    <span class="md-ellipsis">
+      DATABASE_ROUTERS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default_language" class="md-nav__link">
+    <span class="md-ellipsis">
+      DEFAULT_LANGUAGE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docs_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOCS_ROOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#email" class="md-nav__link">
+    <span class="md-ellipsis">
+      EMAIL
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hostname" class="md-nav__link">
+    <span class="md-ellipsis">
+      HOSTNAME
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http_proxies" class="md-nav__link">
+    <span class="md-ellipsis">
+      HTTP_PROXIES
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal_ips" class="md-nav__link">
+    <span class="md-ellipsis">
+      INTERNAL_IPS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isolated_deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISOLATED_DEPLOYMENT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jinja2_filters" class="md-nav__link">
+    <span class="md-ellipsis">
+      JINJA2_FILTERS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      LOGGING
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LOGGING">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      사용 가능한 로거
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#media_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      MEDIA_ROOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy_routers" class="md-nav__link">
+    <span class="md-ellipsis">
+      PROXY_ROUTERS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reports_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      REPORTS_ROOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripts_root" class="md-nav__link">
+    <span class="md-ellipsis">
+      SCRIPTS_ROOT
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search_backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      SEARCH_BACKEND
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storages" class="md-nav__link">
+    <span class="md-ellipsis">
+      STORAGES
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="STORAGES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      환경 변수 및 타사 라이브러리
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time_zone" class="md-nav__link">
+    <span class="md-ellipsis">
+      TIME_ZONE
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#translation_enabled" class="md-nav__link">
+    <span class="md-ellipsis">
+      TRANSLATION_ENABLED
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">시스템 매개변수</h1>
+<h2 id="base_path">BASE_PATH</h2>
+<p>기본값: <code>None</code></p>
+<p>NetBox에 접근할 때 사용할 기본 URL 경로입니다. 스키마나 도메인 이름은 포함하지 마세요. 예를 들어, https://example.com/netbox/에 설치된 경우 다음과 같이 설정합니다:</p>
+<div class="highlight"><pre><span></span><code><span class="n">BASE_PATH</span> <span class="o">=</span> <span class="s1">&#39;netbox/&#39;</span>
+</code></pre></div>
+<hr />
+<h2 id="database_routers">DATABASE_ROUTERS</h2>
+<p>기본값: <code>[]</code> (빈 목록)</p>
+<p>쿼리에 적합한 데이터베이스를 자동으로 선택하는 데 사용할 <a href="https://docs.djangoproject.com/en/stable/topics/db/multi-db/">데이터베이스 라우터</a>의 반복 가능 객체입니다. 이는 <a href="../required-parameters/#databases">여러 데이터베이스</a>가 구성된 경우에만 유용합니다.</p>
+<hr />
+<h2 id="default_language">DEFAULT_LANGUAGE</h2>
+<p>기본값: <code>en-us</code> (미국 영어)</p>
+<p>언어/로케일을 지정하지 않는 요청에 대한 기본 선호 언어/로케일을 정의합니다. (이 매개변수는 Django의 <a href="https://docs.djangoproject.com/en/stable/ref/settings/#language-code"><code>LANGUAGE_CODE</code></a> 내부 설정에 매핑됩니다.)</p>
+<hr />
+<h2 id="docs_root">DOCS_ROOT</h2>
+<p>기본값: <code>$INSTALL_ROOT/docs/</code></p>
+<p>NetBox 문서에 대한 파일 시스템 경로입니다. 웹 UI에서 상황에 맞는 문서를 제공할 때 사용됩니다. 기본적으로 이것은 루트 NetBox 설치 경로 내의 <code>docs/</code> 디렉토리입니다. (포함된 문서를 비활성화하려면 <code>None</code>으로 설정하세요.)</p>
+<hr />
+<h2 id="email">EMAIL</h2>
+<p>이메일을 보내려면 NetBox에 이메일 서버가 구성되어 있어야 합니다. <code>EMAIL</code> 구성 매개변수 내에서 다음 항목을 정의할 수 있습니다:</p>
+<ul>
+<li><code>SERVER</code> - 이메일 서버의 호스트 이름 또는 IP 주소(로컬에서 실행하는 경우 <code>localhost</code> 사용)</li>
+<li><code>PORT</code> - 연결에 사용할 TCP 포트(기본값: <code>25</code>)</li>
+<li><code>USERNAME</code> - 인증에 사용할 사용자 이름</li>
+<li><code>PASSWORD</code> - 인증에 사용할 비밀번호</li>
+<li><code>USE_SSL</code> - 서버에 연결할 때 SSL 사용(기본값: <code>False</code>)</li>
+<li><code>USE_TLS</code> - 서버에 연결할 때 TLS 사용(기본값: <code>False</code>)</li>
+<li><code>SSL_CERTFILE</code> - PEM 형식 SSL 인증서 파일 경로(선택 사항)</li>
+<li><code>SSL_KEYFILE</code> - PEM 형식 SSL 개인 키 파일 경로(선택 사항)</li>
+<li><code>TIMEOUT</code> - 연결 대기 시간(초 단위, 기본값: <code>10</code>)</li>
+<li><code>FROM_EMAIL</code> - NetBox에서 보내는 이메일의 발신자 주소</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>USE_SSL</code>과 <code>USE_TLS</code> 매개변수는 상호 배타적입니다.</p>
+</div>
+<p>이메일은 중요한 이벤트가 발생하거나 <a href="#logging">로깅</a>이 구성된 경우에만 NetBox에서 전송됩니다. 이메일 서버 구성을 테스트하려면 Django에서 NetBox 셸 내에서 접근할 수 있는 편리한 <a href="https://docs.djangoproject.com/en/stable/topics/email/#send-mail">send_mail()</a> 함수를 제공합니다:</p>
+<div class="highlight"><pre><span></span><code># python ./manage.py nbshell
+&gt;&gt;&gt; from django.core.mail import send_mail
+&gt;&gt;&gt; send_mail(
+  &#39;테스트 이메일 제목&#39;,
+  &#39;테스트 이메일 본문&#39;,
+  &#39;noreply-netbox@example.com&#39;,
+  [&#39;users@example.com&#39;],
+  fail_silently=False
+)
+</code></pre></div>
+<hr />
+<h2 id="hostname">HOSTNAME</h2>
+<div class="admonition info">
+<p class="admonition-title">이 매개변수는 NetBox v4.4에서 도입되었습니다.</p>
+</div>
+<p>기본값: 시스템 호스트 이름</p>
+<p>NetBox가 실행 중인 시스템을 식별하는 사용자 인터페이스에 표시되는 호스트 이름입니다. 정의되지 않은 경우 Python의 <code>platform.node()</code>에서 보고하는 시스템 호스트 이름이 기본값입니다.</p>
+<hr />
+<h2 id="http_proxies">HTTP_PROXIES</h2>
+<p>기본값: <code>None</code></p>
+<p>NetBox에서 발생하는 아웃바운드 요청(예: 웹훅 요청 전송 시)에 사용할 HTTP 프록시 딕셔너리입니다. 프록시는 <a href="https://requests.readthedocs.io/en/latest/user/advanced/#proxies">Python requests 라이브러리 문서</a>에 따라 스키마(HTTP 및 HTTPS)별로 지정해야 합니다. 예:</p>
+<div class="highlight"><pre><span></span><code><span class="n">HTTP_PROXIES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;http&#39;</span><span class="p">:</span> <span class="s1">&#39;http://10.10.1.10:3128&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https&#39;</span><span class="p">:</span> <span class="s1">&#39;http://10.10.1.10:1080&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>주어진 요청에 사용할 프록시를 결정하는 데 더 많은 유연성이 필요한 경우 <a href="#proxy_routers"><code>PROXY_ROUTERS</code></a> 매개변수를 통해 하나 이상의 사용자 정의 프록시 라우터를 구현하는 것을 고려하세요.</p>
+<hr />
+<h2 id="internal_ips">INTERNAL_IPS</h2>
+<p>기본값: <code>('127.0.0.1', '::1')</code></p>
+<p>디버깅 출력 표시를 제어하는 데 사용되는 시스템 내부로 인식되는 IP 주소 목록입니다. 예를 들어, 디버깅 도구 모음은 나열된 IP 주소 중 하나에서 클라이언트가 NetBox에 접근하는 경우에만 표시됩니다(<a href="../development/#debug"><code>DEBUG</code></a>가 <code>True</code>인 경우).</p>
+<hr />
+<h2 id="isolated_deployment">ISOLATED_DEPLOYMENT</h2>
+<p>기본값: <code>False</code></p>
+<p>인터넷 접근이 없는 NetBox 배포에 대해 이 구성 매개변수를 <code>True</code>로 설정하세요. 이렇게 하면 인터넷 접근에 의존하는 기타 기능이 비활성화됩니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>프록시를 통해 인터넷 접근이 가능한 경우 대신 <a href="#http_proxies"><code>HTTP_PROXIES</code></a>를 설정하세요.</p>
+</div>
+<hr />
+<h2 id="jinja2_filters">JINJA2_FILTERS</h2>
+<p>기본값: <code>{}</code></p>
+<p>키가 필터 이름이고 값이 호출 가능한 사용자 정의 Jinja2 필터 딕셔너리입니다. 자세한 내용은 <a href="https://jinja.palletsprojects.com/en/3.1.x/api/#custom-filters">Jinja2 문서</a>를 참조하세요. 예:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">uppercase</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="n">JINJA2_FILTERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;uppercase&#39;</span><span class="p">:</span> <span class="n">uppercase</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+<hr />
+<h2 id="logging">LOGGING</h2>
+<p>기본적으로 INFO 심각도 이상의 모든 메시지가 콘솔에 기록됩니다. 또한 <a href="../development/#debug"><code>DEBUG</code></a>가 False이고 이메일 접근이 구성된 경우 ERROR 및 CRITICAL 메시지가 <a href="../miscellaneous/#admins"><code>ADMINS</code></a>에 정의된 사용자에게 이메일로 전송됩니다.</p>
+<p>NetBox가 실행되는 Django 프레임워크는 로깅 형식 및 대상의 사용자 정의를 허용합니다. 이 설정 구성에 대한 자세한 내용은 <a href="https://docs.djangoproject.com/en/stable/topics/logging/">Django 로깅 문서</a>를 참조하세요. 다음은 모든 INFO 이상의 메시지를 로컬 파일에 기록하는 예입니다:</p>
+<div class="highlight"><pre><span></span><code><span class="n">LOGGING</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;disable_existing_loggers&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;file&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;INFO&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;logging.FileHandler&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;filename&#39;</span><span class="p">:</span> <span class="s1">&#39;/var/log/netbox.log&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;loggers&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;django&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;handlers&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="s1">&#39;INFO&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="_2">사용 가능한 로거</h3>
+<ul>
+<li><code>netbox.&lt;app&gt;.&lt;model&gt;</code> - 모델별 로그 메시지의 일반 형식</li>
+<li><code>netbox.auth.*</code> - 인증 이벤트</li>
+<li><code>netbox.api.views.*</code> - REST API의 비즈니스 로직을 처리하는 뷰</li>
+<li><code>netbox.event_rules</code> - 이벤트 규칙</li>
+<li><code>netbox.jobs.*</code> - 백그라운드 작업</li>
+<li><code>netbox.reports.*</code> - 보고서 실행(<code>module.name</code>)</li>
+<li><code>netbox.scripts.*</code> - 사용자 정의 스크립트 실행(<code>module.name</code>)</li>
+<li><code>netbox.views.*</code> - 웹 UI의 비즈니스 로직을 처리하는 뷰</li>
+</ul>
+<hr />
+<h2 id="media_root">MEDIA_ROOT</h2>
+<p>기본값: <code>$INSTALL_ROOT/netbox/media/</code></p>
+<p>미디어 파일(예: 이미지 첨부 파일)이 저장되는 위치의 파일 경로입니다. 기본적으로 이것은 기본 NetBox 설치 경로 내의 <code>netbox/media/</code> 디렉토리입니다.</p>
+<hr />
+<h2 id="proxy_routers">PROXY_ROUTERS</h2>
+<p>기본값: <code>["utilities.proxy.DefaultProxyRouter"]</code></p>
+<p>아웃바운드 HTTP 요청에 사용할 프록시 서버를 결정하는 Python 클래스 목록입니다. 목록의 각 항목은 클래스 자체이거나 클래스에 대한 점으로 구분된 경로일 수 있습니다.</p>
+<p>각 클래스의 <code>route()</code> 메서드는 프로토콜(예: <code>http</code> 및/또는 <code>https</code>)별로 정렬된 후보 프록시의 딕셔너리를 반환하거나 실행 가능한 프록시를 결정할 수 없는 경우 None을 반환해야 합니다. 기본 클래스 <code>DefaultProxyRouter</code>는 단순히 <a href="#http_proxies"><code>HTTP_PROXIES</code></a>의 내용을 반환합니다.</p>
+<hr />
+<h2 id="reports_root">REPORTS_ROOT</h2>
+<p>기본값: <code>$INSTALL_ROOT/netbox/reports/</code></p>
+<p><a href="../../customization/reports/">사용자 정의 보고서</a>가 보관될 위치의 파일 경로입니다. 기본적으로 이것은 기본 NetBox 설치 경로 내의 <code>netbox/reports/</code> 디렉토리입니다.</p>
+<hr />
+<h2 id="scripts_root">SCRIPTS_ROOT</h2>
+<p>기본값: <code>$INSTALL_ROOT/netbox/scripts/</code></p>
+<p><a href="../../customization/custom-scripts/">사용자 정의 스크립트</a>가 보관될 위치의 파일 경로입니다. 기본적으로 이것은 기본 NetBox 설치 경로 내의 <code>netbox/scripts/</code> 디렉토리입니다.</p>
+<hr />
+<h2 id="search_backend">SEARCH_BACKEND</h2>
+<p>기본값: <code>'netbox.search.backends.CachedValueSearchBackend'</code></p>
+<p>원하는 검색 백엔드 클래스에 대한 점으로 구분된 경로입니다. <code>CachedValueSearchBackend</code>는 현재 NetBox에서 제공하는 유일한 검색 백엔드이지만, 이 설정을 사용하여 사용자 정의 백엔드를 활성화할 수 있습니다.</p>
+<hr />
+<h2 id="storages">STORAGES</h2>
+<p><a href="../../models/extras/imageattachment/">이미지 첨부 파일</a> 및 <a href="../../customization/custom-scripts/">사용자 정의 스크립트</a>와 같은 업로드된 파일을 처리하기 위한 백엔드 스토리지 엔진입니다. NetBox는 여러 인기 있는 파일 스토리지 서비스에 대한 백엔드를 제공하는 <a href="https://django-storages.readthedocs.io/en/stable/"><code>django-storages</code></a> 및 <a href="https://github.com/dennisv/django-storage-swift"><code>django-storage-swift</code></a> 라이브러리와 통합됩니다. 구성되지 않은 경우 로컬 파일 시스템 스토리지가 사용됩니다.</p>
+<p>기본적으로 다음 구성이 사용됩니다:</p>
+<div class="highlight"><pre><span></span><code><span class="n">STORAGES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;django.core.files.storage.FileSystemStorage&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;staticfiles&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;django.contrib.staticfiles.storage.StaticFilesStorage&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;extras.storage.ScriptFileSystemStorage&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><code>STORAGES</code> 딕셔너리 내에서 <code>"default"</code>는 이미지 업로드에 사용되고, "staticfiles"는 정적 파일에, <code>"scripts"</code>는 사용자 정의 스크립트에 사용됩니다.</p>
+<p>S3와 같은 원격 스토리지를 사용하는 경우 필요에 따라 각 스토리지 항목에 대해 <code>STORAGES[key]["OPTIONS"]</code>로 구성을 정의하세요. 예:</p>
+<div class="highlight"><pre><span></span><code><span class="n">STORAGES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;scripts&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;BACKEND&quot;</span><span class="p">:</span> <span class="s2">&quot;storages.backends.s3boto3.S3Boto3Storage&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;OPTIONS&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;access_key&#39;</span><span class="p">:</span> <span class="s1">&#39;access key&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;secret_key&#39;</span><span class="p">:</span> <span class="s1">&#39;secret key&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>각 스토리지 백엔드에 대한 특정 구성 설정은 <a href="https://django-storages.readthedocs.io/en/latest/index.html">django-storages 문서</a>에서 찾을 수 있습니다.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>STORAGES</code> 구성 매개변수에 정의된 키는 기본 구성의 키를 대체합니다. 구성하려는 특정 백엔드에 대해서만 <code>STORAGES</code> 내에 키를 정의하면 됩니다.</p>
+</div>
+<h3 id="_3">환경 변수 및 타사 라이브러리</h3>
+<p>NetBox는 자동 환경 변수 감지 대신 명시적인 Python 구성 방식을 사용합니다. 이는 명확한 구성 관리 및 버전 제어 기능을 제공하지만, <code>django-storages</code>와 같은 일부 타사 라이브러리가 NetBox 컨텍스트 내에서 작동하는 방식에 영향을 미칩니다.</p>
+<p>많은 Django 라이브러리(<code>django-storages</code> 포함)는 <code>AWS_STORAGE_BUCKET_NAME</code> 또는 <code>AWS_S3_ACCESS_KEY_ID</code>와 같은 환경 변수를 자동으로 감지할 것으로 예상합니다. 그러나 NetBox의 구성 처리로 인해 이러한 라이브러리 중 일부에 문서화된 대로 이 자동 감지가 작동하지 않습니다.</p>
+<p>환경 변수 감지에 의존하는 타사 라이브러리를 사용할 때는 NetBox <code>configuration.py</code>에서 환경 변수를 명시적으로 읽어야 할 수 있습니다:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">STORAGES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;storages.backends.s3.S3Storage&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;bucket_name&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_STORAGE_BUCKET_NAME&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;access_key&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_S3_ACCESS_KEY_ID&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;secret_key&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_S3_SECRET_ACCESS_KEY&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;endpoint_url&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_S3_ENDPOINT_URL&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;media/&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;staticfiles&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;BACKEND&#39;</span><span class="p">:</span> <span class="s1">&#39;storages.backends.s3.S3Storage&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;OPTIONS&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;bucket_name&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_STORAGE_BUCKET_NAME&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;access_key&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_S3_ACCESS_KEY_ID&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;secret_key&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_S3_SECRET_ACCESS_KEY&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;endpoint_url&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;AWS_S3_ENDPOINT_URL&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="s1">&#39;static/&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>이 접근 방식은 환경 변수가 NetBox의 구성 처리 중에 해결되기 때문에 작동하며, 타사 라이브러리가 자체 환경 변수 감지를 시도하기 전에 해결됩니다.</p>
+<div class="admonition warning">
+<p class="admonition-title">구성 동작</p>
+<p>구성에서 명시적으로 읽지 않고 <code>AWS_STORAGE_BUCKET_NAME</code>과 같은 환경 변수를 설정하는 것만으로는 작동하지 않습니다. 변수는 <code>configuration.py</code> 파일 내에서 <code>os.environ.get()</code>을 사용하여 읽어야 합니다.</p>
+</div>
+<hr />
+<h2 id="time_zone">TIME_ZONE</h2>
+<p>기본값: <code>"UTC"</code></p>
+<p>NetBox가 날짜와 시간을 처리할 때 사용하는 시간대입니다. 현지 시간대를 사용해야 하는 특별한 이유가 없는 한 UTC 시간을 사용하는 것이 좋습니다. <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">사용 가능한 시간대 목록</a>을 참조하세요.</p>
+<hr />
+<h2 id="translation_enabled">TRANSLATION_ENABLED</h2>
+<p>기본값: <code>True</code></p>
+<p>사용자 인터페이스에 대한 언어 번역을 활성화합니다. (이 매개변수는 Django의 <a href="https://docs.djangoproject.com/en/stable/ref/settings/#std-setting-USE_I18N">USE_I18N</a> 설정에 매핑됩니다.)</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="하단/푸터" >
+        
+          
+          <a href="../required-parameters/" class="md-footer__link md-footer__link--prev" aria-label="이전: 필수 파라미터">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                이전
+              </span>
+              <div class="md-ellipsis">
+                필수 파라미터
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../security/" class="md-footer__link md-footer__link--next" aria-label="다음: 보안">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                다음
+              </span>
+              <div class="md-ellipsis">
+                보안
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+
+  <div class="md-copyright">
+    ℹ️ Documentation is being served locally
+  </div>
+
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/netbox-community/netbox" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://netdev.chat/" target="_blank" rel="noopener" title="netdev.chat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M94.1 315.1c0 25.9-21.2 47.1-47.1 47.1S0 341 0 315.1 21.2 268 47.1 268h47.1v47.1zm23.7 0c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1v117.8c0 25.9-21.2 47.1-47.1 47.1s-47.1-21.2-47.1-47.1zm47.1-189c-25.9 0-47.1-21.2-47.1-47.1s21.2-47 47.1-47S212 53.2 212 79.1v47.1h-47.1zm0 23.7c25.9 0 47.1 21.2 47.1 47.1S190.8 244 164.9 244H47.1C21.2 244 0 222.8 0 196.9s21.2-47.1 47.1-47.1zm189 47.1c0-25.9 21.2-47.1 47.1-47.1s47 21.2 47 47.1-21.2 47.1-47.1 47.1h-47.1v-47.1zm-23.7 0c0 25.9-21.2 47.1-47.1 47.1S236 222.8 236 196.9V79.1c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1zm-47.1 189c25.9 0 47.1 21.2 47.1 47.1s-21.2 47-47.1 47-47.1-21.2-47.1-47.1v-47.1h47.1zm0-23.7c-25.9 0-47.1-21.2-47.1-47.1s21.2-47.1 47.1-47.1h117.8c25.9 0 47.1 21.2 47.1 47.1s-21.2 47.1-47.1 47.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

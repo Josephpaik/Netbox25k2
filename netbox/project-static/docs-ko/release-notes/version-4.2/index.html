@@ -1,0 +1,3221 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+  
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.netbox.dev/ko/release-notes/version-4.2/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+  
+  
+    <meta name="robots" content="noindex">
+  
+
+    
+      
+        <title>NetBox v4.2 - NetBox 한국어 문서</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#netbox-v42" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../.." title="NetBox 한국어 문서" class="md-header__button md-logo" aria-label="NetBox 한국어 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NetBox 한국어 문서
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NetBox v4.2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="다크 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="다크 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="라이트 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="라이트 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="https://docs.netbox.dev/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="https://docs.netbox.dev/ko/" hreflang="ko" class="md-select__link">
+              한국어
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/netbox-community/netbox" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    netbox-community/netbox
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="NetBox 한국어 문서" class="md-nav__button md-logo" aria-label="NetBox 한국어 문서" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NetBox 한국어 문서
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/netbox-community/netbox" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    netbox-community/netbox
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction_ko/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    소개
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    기능
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            기능
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/facilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    시설
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/devices-cabling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    장비 및 케이블링
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/power-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    전력 추적
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/ipam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    IPAM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/vlan-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VLAN 관리
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/l2vpn-overlay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L2VPN & 오버레이
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    회선
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/wireless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    무선
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    가상화
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/vpn-tunnels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VPN 터널
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/tenancy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    테넌시
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/contacts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    연락처
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    검색
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/context-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    컨텍스트 데이터
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/configuration-rendering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    구성 렌더링
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/synchronized-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    동기화 데이터
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/change-logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    변경 로깅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/journaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    저널링
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/event-rules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    이벤트 규칙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/user-preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    사용자 설정
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    알림
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/background-jobs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    백그라운드 작업
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/authentication-permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    인증 및 권한
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/api-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API 및 통합
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features-ko/customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스터마이징
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    설치 및 업그레이드
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            설치 및 업그레이드
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox 설치
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/1-postgresql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1. PostgreSQL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/2-redis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2. Redis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/3-netbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3. NetBox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/4a-gunicorn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4a. Gunicorn
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/5-http-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5. HTTP 서버
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation-ko/upgrading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox 업그레이드
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    시작하기
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            시작하기
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started-ko/planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    계획
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started-ko/populating-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    데이터 입력
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    구성
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            구성
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox 구성
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/required-parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    필수 파라미터
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    시스템
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    보안
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/graphql-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphQL API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/remote-authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    원격 인증
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/data-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    데이터 및 유효성 검사
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/default-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    기본값
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/error-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    오류 보고
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    플러그인
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/miscellaneous/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    기타
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration-ko/development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    개발
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    커스터마이징
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            커스터마이징
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/custom-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스텀 필드
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/custom-links/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스텀 링크
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/custom-validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스텀 유효성 검사
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/export-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    익스포트 템플릿
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    리포트
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization-ko/custom-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    커스텀 스크립트
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    통합
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            통합
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    REST API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/graphql-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GraphQL API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/webhooks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    웹훅
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/synchronized-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    동기화 데이터
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../integrations-ko/prometheus-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prometheus 메트릭
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    관리
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            관리
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    인증
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            인증
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/authentication/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    개요
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/authentication/google/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Google
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/authentication/microsoft-entra-id/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Microsoft Entra ID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/authentication/okta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Okta
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    권한
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/error-reporting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    오류 보고
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/replicating-netbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox 복제
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration-ko/netbox-shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    NetBox Shell
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    IDC 시나리오
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            IDC 시나리오
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../idc_scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    소개
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../idc_scenario/USAGE_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    사용 가이드
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    참고 자료
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            참고 자료
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../NetBox%20macOS%20%EC%84%A4%EC%B9%98%20%EB%B0%8F%20%EC%82%AC%EC%9A%A9%20%EA%B0%80%EC%9D%B4%EB%93%9C%20%28%ED%95%9C%EA%B8%80%29/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    macOS 설치 가이드
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#v429-2025-04-30" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.9 (2025-04-30)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.9 (2025-04-30)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v428-2025-04-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.8 (2025-04-22)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.8 (2025-04-22)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v427-2025-04-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.7 (2025-04-10)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.7 (2025-04-10)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v426-2025-03-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.6 (2025-03-21)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.6 (2025-03-21)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v425-2025-03-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.5 (2025-03-06)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.5 (2025-03-06)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v424-2025-02-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.4 (2025-02-21)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.4 (2025-02-21)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v423-2025-02-04" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.3 (2025-02-04)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.3 (2025-02-04)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v422-2025-01-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.2 (2025-01-17)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.2 (2025-01-17)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v421-2025-01-08" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.1 (2025-01-08)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.1 (2025-01-08)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v420-2025-01-06" class="md-nav__link">
+    <span class="md-ellipsis">
+      v4.2.0 (2025-01-06)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v4.2.0 (2025-01-06)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Breaking Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#assign-multiple-mac-addresses-per-interface-4867" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assign Multiple MAC Addresses per Interface (#4867)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-add-ui-widget-5858" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick Add UI Widget (#5858)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-translation-7336" class="md-nav__link">
+    <span class="md-ellipsis">
+      VLAN Translation (#7336)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-circuits-13086" class="md-nav__link">
+    <span class="md-ellipsis">
+      Virtual Circuits (#13086)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q-in-q-encapsulation-13428" class="md-nav__link">
+    <span class="md-ellipsis">
+      Q-in-Q Encapsulation (#13428)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plugins
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rest-api-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      REST API Changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="netbox-v42">NetBox v4.2</h1>
+<h2 id="v429-2025-04-30">v4.2.9 (2025-04-30)</h2>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/17151">#17151</a> - Display circuit type with background color in circuits list</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17319">#17319</a> - Improve layout of component template edit forms</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17405">#17405</a> - Display plugin icons in plugins list</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18215">#18215</a> - Link to script results list from script history</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18334">#18334</a> - Add region, site group, site, location, and rack filters for modules</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18982">#18982</a> - Reference rack as related object in changelog records for rack reservations</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18989">#18989</a> - List virtual circuits under provider view</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19110">#19110</a> - Enable filtering devices and virtual machines by primary IP address</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19358">#19358</a> - Move release info from footer to the navigation menu</li>
+</ul>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/15739">#15739</a> - Account for parallel cables when calculating total path length</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/15971">#15971</a> - Preserve "none" selection in filter form fields</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/16238">#16238</a> - Fix styling for white, gray, and black custom link buttons</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17613">#17613</a> - Fix layout of object view content on mobile</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17676">#17676</a> - Fix support for module bay creation when bulk importing module types</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18706">#18706</a> - Fix validation for VLANs assigned to both a group and a site</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18717">#18717</a> - Ensure change logs populated for many-to-one changes</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19117">#19117</a> - Avoid <code>AttributeError</code> exception when bulk import objects which have a multi-object custom field with a default value</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19204">#19204</a> - Improve JSON serialization support for data returned by a custom script</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19217">#19217</a> - Ensure static assets for the debug toolbar are installed even if <code>DEBUG</code> is false</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19228">#19228</a> - Fix ordering of custom scripts to avoid <code>NoReverseMatch</code> exception</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19229">#19229</a> - Fix <code>ValueError</code> exception when attempting to nullify interface mode when a VLAN is assigned</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19275">#19275</a> - <code>type</code> field should not be required when bulk editing interfaces</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19279">#19279</a> - <code>status</code> field should not be required when bulk editing inventory items</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19281">#19281</a> - Fix form validation failure when attempting to create a service from a service template</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19320">#19320</a> - Include Q-in-Q VLAN (if any) in VM interface details</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19322">#19322</a> - Correct URL paths for bulk import views</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19346">#19346</a> - Ensure all redirect URLs are validated before use</li>
+</ul>
+<hr />
+<h2 id="v428-2025-04-22">v4.2.8 (2025-04-22)</h2>
+<h3 id="enhancements_1">Enhancements</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/17136">#17136</a> - Introduce the <code>--readonly</code> flag on upgrade script</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17908">#17908</a> - Add trace buttons to terminations under cable view</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18879">#18879</a> - Enable filtering prefixes by group of assigned VLAN</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18976">#18976</a> - Include FHRP group name on interface lists</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18978">#18978</a> - Add 802.1Q mode to interface filter form</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19038">#19038</a> - Show count of related VLAN groups under cluster view</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19040">#19040</a> - Add "copy to clipboard" button for rendered config</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19056">#19056</a> - Enable filtering devices by location slug</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19196">#19196</a> - Add filtering by VLAN translation policy to interface filter forms</li>
+</ul>
+<h3 id="bug-fixes_1">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/18500">#18500</a> - <code>prepare_cloned_fields()</code> should validate cloning support on model</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18669">#18669</a> - Ensure default custom field values are respected when creating objects via the REST API</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18881">#18881</a> - Include missing related object counts under certain views</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18955">#18955</a> - Omit "clear" button on required choice fields</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18959">#18959</a> - Preserve ordering of terminations in cable traces</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18961">#18961</a> - Virtual chassis form should exclude members of other VCs when adding members</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19166">#19166</a> - Fix custom field choices bulk import support for <code>base_choices</code></li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19189">#19189</a> - The <code>load_yaml()</code> convenience method on BaseScript should use SafeLoader</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19195">#19195</a> - Language cookie should respect <code>SESSION_COOKIE_SECURE</code> value</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19230">#19230</a> - Allow label reuse when creating multiple components from a pattern</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19268">#19268</a> - Restore editing conflict protection for several object forms</li>
+</ul>
+<hr />
+<h2 id="v427-2025-04-10">v4.2.7 (2025-04-10)</h2>
+<h3 id="enhancements_2">Enhancements</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/16144">#16144</a> - Add support for plugin models to GetReturnURLMixin</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18138">#18138</a> - Enable filtering of ObjectVar and MultiObjectVar input selections for custom fields</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18656">#18656</a> - Enable FHRP group assignment when bulk importing IP addresses</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18980">#18980</a> - Optimize bulk updates of custom field values when custom fields are added/removed</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19018">#19018</a> - Add MoCA interface type</li>
+</ul>
+<h3 id="bug-fixes_2">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/18553">#18553</a> - Avoid clearing site of assigned virtual machines when editing a cluster</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18738">#18738</a> - Respect declared ordering of custom scripts within a module</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18895">#18895</a> - Fix GraphQL support for interfaces which terminate virtual circuits</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18904">#18904</a> - Add missing tags column to config contexts table</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18964">#18964</a> - Fix "select all" behavior on object lists</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18965">#18965</a> - "Run script" button should respect default commit toggle for custom scripts</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18991">#18991</a> - Fix cable path tracing for pass-through ports in REST API</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18999">#18999</a> - Fix filtering of inventory items with no manufacturer in GraphQL API</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19021">#19021</a> - Preserve JSONField stylign when <code>help_text</code> is passed</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19023">#19023</a> - <code>get_field_value()</code> should honor null values on bound form fields</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19030">#19030</a> - Prevent pagination buttons from overlapping bulk action buttons on object lists</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19041">#19041</a> - Fix <code>IndexError</code> exception when creating multiple front ports with a label</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19092">#19092</a> - Fix clearing of scope field when bulk editing prefixes</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/19122">#19122</a> - Fix styling of server error page</li>
+</ul>
+<hr />
+<h2 id="v426-2025-03-21">v4.2.6 (2025-03-21)</h2>
+<h3 id="enhancements_3">Enhancements</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/17503">#17503</a> - Add rack title above rack on rack detail view</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17686">#17686</a> - Add config option for disk space divisor</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18579">#18579</a> - Update filtersets and filter forms to include contact filters where missing</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18744">#18744</a> - Ensure contact link in tables is hyperlinked</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18816">#18816</a> - Add FC/UPC, FC/APC and FC/PC port types</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18880">#18880</a> - Delay enqueuing background tasks until DB transaction is committed to avoid race condition</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18939">#18939</a> - Support site group search for ASNs</li>
+</ul>
+<h3 id="bug-fixes_3">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/18409">#18409</a> - Eliminate N+1 issue by adding generic prefetch operation to Interface API endpoint</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18557">#18557</a> - Update JSONField to enclose bare string values in quotes</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18582">#18582</a> - Fix prefix bulk import with associated VLAN and conflicting VLAN IDs</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18742">#18742</a> - Ensure location list and detail views show related VLAN group information</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18782">#18782</a> - Ensure misconfigured object list widgets on the dashboard now degrade gracefully</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18833">#18833</a> - Fix inventory item bulk edit to ensure that component name and type are both validated Ensure</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18838">#18838</a> - Ensure that local context data correctly rejects falsy values</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18845">#18845</a> - Restore default sort behavior of name column on devices list view</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18863">#18863</a> - Exempt MPTT-based models from ordering fix introduced in #18279</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18869">#18869</a> - Ensure numeric conversion helper always return a clean decimal value</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18872">#18872</a> - Ensure that <code>kind</code> is a required field when making journal entries</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18884">#18884</a> - Ensure tag deserialization is handled correctly</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18887">#18887</a> - Allow VM interface objects to be set on prefix object-type custom field</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18926">#18926</a> - Fix icon displayed for GitHub authentication on login page</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18928">#18928</a> - Support cascading deletions when cleaning up expired changelog records</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18933">#18933</a> - Allow filtering VLAN groups by associated site groups</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18944">#18944</a> - Ensure clearing "Widget type" field when adding widgets to dashboard does not cause a "ValueError: Unregistered widget class" error</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18949">#18949</a> - Add missing contacts property to GraphQL types where the associated model has a connection to a contact</li>
+</ul>
+<hr />
+<h2 id="v425-2025-03-06">v4.2.5 (2025-03-06)</h2>
+<h3 id="enhancements_4">Enhancements</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/17357">#17357</a> - Use VirtualChassis name as fallback for unnamed devices</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17542">#17542</a> - Add contact assignments to VPN tunnels</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17944">#17944</a> - Allow script inputs to be filtered on ObjectVar and MultiObjectVar selections</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18024">#18024</a> - Add permalink URL pattern to match a custom script by module and class name</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18141">#18141</a> - Support "Quick Add" for plugins</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18403">#18403</a> - Improve performance of job list views</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18693">#18693</a> - Support setting VLAN translation on bulk edit of interfaces</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18772">#18772</a> - Add "type" filter for virtual circuits</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18774">#18774</a> - Add tooltip preview of tag descriptions when hovering over tags</li>
+</ul>
+<h3 id="bug-fixes_4">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/15016">#15016</a> - Prevent AssertionError when adding multiple devices "mid-span" in a cable trace</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/15924">#15924</a> - Prevent setting tagged VLANs on interfaces with mode: tagged-all</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17488">#17488</a> - Ensure VLANGroup.vid_ranges shows up in API results</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17709">#17709</a> - Allow primary key for nested models in OpenAPI request schemas</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17796">#17796</a> - Fix IndexError on "Create &amp; Add Another" operation on custom field choices</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18605">#18605</a> - Limit VLAN selection dropdown to choices appropriate to site</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18722">#18722</a> - Improve UI feedback on failed script execution</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18729">#18729</a> - Fix unpredictable ordering on querysets with annotations/groupings</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18753">#18753</a> - Prevent webhooks from being triggered on a script dry-run</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18758">#18758</a> - Fix FieldError when sorting by account count field in providers list</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18768">#18768</a> - Fix removing a secondary MAC address from an interface</li>
+</ul>
+<hr />
+<h2 id="v424-2025-02-21">v4.2.4 (2025-02-21)</h2>
+<h3 id="enhancements_5">Enhancements</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/17309">#17309</a> - Omit empty counts in related object tables</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18277">#18277</a> - Improve multi-table inheritance in serialization of change-logged models</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18286">#18286</a> - Add more job duration choices</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18357">#18357</a> - Display author name in plugin list for locally installed plugins</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18408">#18408</a> - Add Paused status for virtual machines</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18584">#18584</a> - Add rack type column to manufacturer list</li>
+</ul>
+<h3 id="bug-fixes_5">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/17436">#17436</a> - Fix {module} replacement in module bays</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18013">#18013</a> - Limit object type to selected object in change log filter</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18241">#18241</a> - Default logging level of custom scripts changed to INFO</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18247">#18247</a> - Fix visibility of disabled cable paths in dark mode</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18480">#18480</a> - Clean data passed to script in runscript command</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18555">#18555</a> - Add default get_absolute_url method to plugin models</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18585">#18585</a> - Fix filtering circuits by location</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18593">#18593</a> - Fix "Create &amp; Add Another" IP Address workflow</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18594">#18594</a> - Enable sorting by ASN count on site and provider lists</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18619">#18619</a> - Ensure shift-click selection selects only visible list items</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18674">#18674</a> - Preserve form values when selecting speed on circuit termination</li>
+</ul>
+<hr />
+<h2 id="v423-2025-02-04">v4.2.3 (2025-02-04)</h2>
+<h3 id="enhancements_6">Enhancements</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/18518">#18518</a> - Add a "hostname" <code>&lt;meta&gt;</code> tag to the page header</li>
+</ul>
+<h3 id="bug-fixes_6">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/18497">#18497</a> - Fix unhandled <code>FieldDoesNotExist</code> exception when search results include virtual circuit</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18433">#18433</a> - Fix MAC address not shown as "primary for interface" in MAC address detail view</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18154">#18154</a> - Allow anonymous users to change default table preferences</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18515">#18515</a> - Fix Django <code>collectstatic</code> management command in debug mode with Redis not running</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18456">#18456</a> - Avoid duplicate MAC Address column in interface tables</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18447">#18447</a> - Fix <code>FieldError</code> exception when sorting interface tables on MAC Address columns </li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18438">#18438</a> - Improve performance in IPAM migration <code>0072_prefix_cached_relations</code> when upgrading from v4.1 or earlier</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18436">#18436</a> - Reset primary MAC address when unassigning MAC address from interface</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18181">#18181</a> - Fix "Create &amp; Add Another" workflow when adding IP addresses to interfaces</li>
+</ul>
+<hr />
+<h2 id="v422-2025-01-17">v4.2.2 (2025-01-17)</h2>
+<h3 id="bug-fixes_7">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/18336">#18336</a> - Validate new rack height against installed devices when changing a rack's type</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18350">#18350</a> - Fix <code>FieldDoesNotExist</code> exception when global search results include a circuit termination</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18353">#18353</a> - Disable fetching of plugin catalog data when <code>ISOLATED_DEPLOYMENT</code> is enabled</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18362">#18362</a> - Avoid transmitting census data on every worker restart</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18363">#18363</a> - Fix support for assigning a MAC address to an interface via the REST API</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18368">#18368</a> - Restore missing attributes from REST API serializer for MAC addresses (<code>tags</code>, <code>created</code>, <code>last_updated</code>, and custom fields)</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18369">#18369</a> - Fix <code>TypeError</code> exception when rendering the system configuration view with one or more custom classes defined under <code>PROTECTION_RULES</code></li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18373">#18373</a> - Fix <code>AttributeError</code> exception when attempting to assign host devices to a cluster</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18376">#18376</a> - Fix the display of tagged VLANs in interfaces list for Q-in-Q interfaces</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18379">#18379</a> - Ensure RSS feed dashboard widget content is sanitized</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18392">#18392</a> - Virtual machines should not inherit config contexts assigned to locations</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18400">#18400</a> - Fix support for <code>STORAGE_BACKEND</code> configuration parameter</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18406">#18406</a> - Scope column headers in object lists should not be orderable</li>
+</ul>
+<hr />
+<h2 id="v421-2025-01-08">v4.2.1 (2025-01-08)</h2>
+<h3 id="bug-fixes_8">Bug Fixes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/18282">#18282</a> - Fix ordering of prefixes list by assigned VLAN</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18314">#18314</a> - Fix KeyError exception when rendering pre-saved dashboard (<code>requires_internet</code> missing)</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18316">#18316</a> - Fix AttributeError exception when global search results include prefixes and/or clusters</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18318">#18318</a> - Correct navigation breadcrumbs for module type UI view</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18324">#18324</a> - Correct filtering for certain related object listings</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18329">#18329</a> - Address upstream bug in GraphQL API where only one primary IP address is returned within a device/VM list</li>
+</ul>
+<hr />
+<h2 id="v420-2025-01-06">v4.2.0 (2025-01-06)</h2>
+<h3 id="breaking-changes">Breaking Changes</h3>
+<ul>
+<li>Support for the Django admin UI has been completely removed. (The Django admin UI was disabled by default in NetBox v4.0.)</li>
+<li>This release drops support for PostgreSQL 12. PostgreSQL 13 or later is required to run this release.</li>
+<li>NetBox has adopted collation-based natural ordering for many models. This may alter the order in which some objects are listed by default.</li>
+<li>Automatic redirects from pre-v4.1 UI views for virtual disks have been removed.</li>
+<li>The <code>site</code> and <code>provider_network</code> foreign key fields on <code>circuits.CircuitTermination</code> have been replaced by the <code>termination</code> generic foreign key.</li>
+<li>The <code>site</code> foreign key field on <code>ipam.Prefix</code> has been replaced by the <code>scope</code> generic foreign key.</li>
+<li>The <code>site</code> foreign key field on <code>virtualization.Cluster</code> has been replaced by the <code>scope</code> generic foreign key.</li>
+<li>The <code>circuit</code> foreign key field on <code>circuits.CircuitGroupAssignment</code> has been replaced by the <code>member</code> generic foreign key.</li>
+<li>Obsolete nested REST API serializers have been removed. These were deprecated in NetBox v4.1 under <a href="https://github.com/netbox-community/netbox/issues/17143">#17143</a>.</li>
+</ul>
+<h3 id="new-features">New Features</h3>
+<h4 id="assign-multiple-mac-addresses-per-interface-4867">Assign Multiple MAC Addresses per Interface (<a href="https://github.com/netbox-community/netbox/issues/4867">#4867</a>)</h4>
+<p>MAC addresses are now managed as independent objects, rather than attributes on device and VM interfaces. NetBox now supports the assignment of multiple MAC addresses per interface, and allows a primary MAC address to be designated for each.</p>
+<h4 id="quick-add-ui-widget-5858">Quick Add UI Widget (<a href="https://github.com/netbox-community/netbox/issues/5858">#5858</a>)</h4>
+<p>A new UI widget has been introduced to enable conveniently creating new related objects while creating or editing an object. For instance, it is now possible to create and assign a new device role when creating or editing a device from within the device form.</p>
+<h4 id="vlan-translation-7336">VLAN Translation (<a href="https://github.com/netbox-community/netbox/issues/7336">#7336</a>)</h4>
+<p>User can now define policies which track the translation of VLAN IDs on IEEE 802.1Q-encapsulated interfaces. Translation policies can be reused across multiple interfaces.</p>
+<h4 id="virtual-circuits-13086">Virtual Circuits (<a href="https://github.com/netbox-community/netbox/issues/13086">#13086</a>)</h4>
+<p>New models have been introduced to support the documentation of virtual circuits as an extension to the physical circuit modeling already supported. This enables users to accurately reflect point-to-point or multipoint virtual circuits atop infrastructure comprising physical circuits and cables.</p>
+<h4 id="q-in-q-encapsulation-13428">Q-in-Q Encapsulation (<a href="https://github.com/netbox-community/netbox/issues/13428">#13428</a>)</h4>
+<p>NetBox now supports the designation of customer VLANs (CVLANs) and service VLANs (SVLANs) to support IEEE 802.1ad/Q-in-Q encapsulation. Each interface can now have it mode designated "Q-in-Q" and be assigned an SVLAN.</p>
+<h3 id="enhancements_7">Enhancements</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/6414">#6414</a> - Prefixes can now be scoped by region, site group, site, or location</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/7699">#7699</a> - Virtualization clusters can now be scoped by region, site group, site, or location</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/9604">#9604</a> - The scope of a circuit termination now include a region, site group, site, location, or provider network</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/10711">#10711</a> - Wireless LANs can now be scoped by region, site group, site, or location</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/11279">#11279</a> - Improved the use of natural ordering for various models throughout the application</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/12596">#12596</a> - Extended the virtualization clusters REST API endpoint to report on allocated VM resources</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/16547">#16547</a> - Add a geographic distance field for circuits</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/16783">#16783</a> - Add an operational status field for inventory items</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17195">#17195</a> - Add a color field for power outlets</li>
+</ul>
+<h3 id="plugins">Plugins</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/15093">#15093</a> - Introduced the <code>events_pipeline</code> configuration parameter, which allows plugins to hook into NetBox event processing</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/16546">#16546</a> - NetBoxModel now provides a default <code>get_absolute_url()</code> method</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/16971">#16971</a> - Plugins can now easily register system jobs to perform background tasks</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17029">#17029</a> - Registering a <code>PluginTemplateExtension</code> subclass for a single model has been deprecated (replace <code>model</code> with <code>models</code>)</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18023">#18023</a> - Extend <code>register_model_view()</code> to handle list views</li>
+</ul>
+<h3 id="other-changes">Other Changes</h3>
+<ul>
+<li><a href="https://github.com/netbox-community/netbox/issues/16136">#16136</a> - Removed support for the Django admin UI</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17165">#17165</a> - All obsolete nested REST API serializers have been removed</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17472">#17472</a> - The legacy staged changes API has been deprecated, and will be removed in Netbox v4.3</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17476">#17476</a> - Upgrade to Django 5.1</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17752">#17752</a> - Bulk object import URL paths have been renamed from <code>*_import</code> to <code>*_bulk_import</code></li>
+<li><a href="https://github.com/netbox-community/netbox/issues/17761">#17761</a> - Optional choice fields now store empty values as null (rather than empty strings) in the database</li>
+<li><a href="https://github.com/netbox-community/netbox/issues/18093">#18093</a> - Redirects for pre-v4.1 virtual disk UI views have been removed</li>
+</ul>
+<h3 id="rest-api-changes">REST API Changes</h3>
+<ul>
+<li>Added the following endpoints:<ul>
+<li><code>/api/circuits/virtual-circuits/</code></li>
+<li><code>/api/circuits/virtual-circuit-terminations/</code></li>
+<li><code>/api/dcim/mac-addresses/</code></li>
+<li><code>/api/ipam/vlan-translation-policies/</code></li>
+<li><code>/api/ipam/vlan-translation-rules/</code></li>
+</ul>
+</li>
+<li>circuits.Circuit<ul>
+<li>Added the optional <code>distance</code> and <code>distance_unit</code> fields</li>
+</ul>
+</li>
+<li>circuits.CircuitGroupAssignment<ul>
+<li>Replaced the <code>circuit</code> field with <code>member_type</code> and <code>member_id</code> to support virtual circuit assignment</li>
+</ul>
+</li>
+<li>circuits.CircuitTermination<ul>
+<li>Removed the <code>site</code> &amp; <code>provider_network</code> fields</li>
+<li>Added the <code>termination_type</code> &amp; <code>termination_id</code> fields to facilitate termination assignment</li>
+<li>Added the read-only <code>termination</code> field</li>
+</ul>
+</li>
+<li>dcim.Interface<ul>
+<li>The <code>mac_address</code> field is now read-only</li>
+<li>Added the <code>primary_mac_address</code> relation to dcim.MACAddress</li>
+<li>Added the read-only <code>mac_addresses</code> list</li>
+<li>Added the <code>qinq_svlan</code> relation to ipam.VLAN</li>
+<li>Added the <code>vlan_translation_policy</code> relation to ipam.VLANTranslationPolicy</li>
+<li>Added <code>mode</code> choice "Q-in-Q"</li>
+</ul>
+</li>
+<li>dcim.InventoryItem<ul>
+<li>Added the optional <code>status</code> choice field</li>
+</ul>
+</li>
+<li>dcim.Location<ul>
+<li>Added the read-only <code>prefix_count</code> field</li>
+</ul>
+</li>
+<li>dcim.PowerOutlet<ul>
+<li>Added the optional <code>color</code> field</li>
+</ul>
+</li>
+<li>dcim.Region<ul>
+<li>Added the read-only <code>prefix_count</code> field</li>
+</ul>
+</li>
+<li>dcim.SiteGroup<ul>
+<li>Added the read-only <code>prefix_count</code> field</li>
+</ul>
+</li>
+<li>ipam.Prefix<ul>
+<li>Removed the <code>site</code> field</li>
+<li>Added the <code>scope_type</code> &amp; <code>scope_id</code> fields to facilitate scope assignment</li>
+<li>Added the read-only <code>scope</code> field</li>
+</ul>
+</li>
+<li>ipam.VLAN<ul>
+<li>Added the optional <code>qinq_role</code> selection field</li>
+<li>Added the <code>qinq_svlan</code> recursive relation</li>
+</ul>
+</li>
+<li>virtualization.Cluster<ul>
+<li>Removed the <code>site</code> field</li>
+<li>Added the <code>scope_type</code> &amp; <code>scope_id</code> fields to facilitate scope assignment</li>
+<li>Added the read-only <code>scope</code> field</li>
+</ul>
+</li>
+<li>virtualization.Cluster<ul>
+<li>Added the read-only fields <code>allocated_vcpus</code>, <code>allocated_memory</code>, and <code>allocated_disk</code></li>
+</ul>
+</li>
+<li>virtualization.VMInterface<ul>
+<li>The <code>mac_address</code> field is now read-only</li>
+<li>Added the <code>primary_mac_address</code> relation to dcim.MACAddress</li>
+<li>Added the read-only <code>mac_addresses</code> list</li>
+<li>Added the <code>qinq_svlan</code> relation to ipam.VLAN</li>
+<li>Added the <code>vlan_translation_policy</code> relation to ipam.VLANTranslationPolicy</li>
+<li>Added <code>mode</code> choice "Q-in-Q"</li>
+</ul>
+</li>
+<li>wireless.WirelessLAN<ul>
+<li>Added the <code>scope_type</code> &amp; <code>scope_id</code> fields to support scope assignment</li>
+<li>Added the read-only <code>scope</code> field</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+
+  <div class="md-copyright">
+    ℹ️ Documentation is being served locally
+  </div>
+
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/netbox-community/netbox" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://netdev.chat/" target="_blank" rel="noopener" title="netdev.chat" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M94.1 315.1c0 25.9-21.2 47.1-47.1 47.1S0 341 0 315.1 21.2 268 47.1 268h47.1v47.1zm23.7 0c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1v117.8c0 25.9-21.2 47.1-47.1 47.1s-47.1-21.2-47.1-47.1zm47.1-189c-25.9 0-47.1-21.2-47.1-47.1s21.2-47 47.1-47S212 53.2 212 79.1v47.1h-47.1zm0 23.7c25.9 0 47.1 21.2 47.1 47.1S190.8 244 164.9 244H47.1C21.2 244 0 222.8 0 196.9s21.2-47.1 47.1-47.1zm189 47.1c0-25.9 21.2-47.1 47.1-47.1s47 21.2 47 47.1-21.2 47.1-47.1 47.1h-47.1v-47.1zm-23.7 0c0 25.9-21.2 47.1-47.1 47.1S236 222.8 236 196.9V79.1c0-25.9 21.2-47.1 47.1-47.1s47.1 21.2 47.1 47.1zm-47.1 189c25.9 0 47.1 21.2 47.1 47.1s-21.2 47-47.1 47-47.1-21.2-47.1-47.1v-47.1h47.1zm0-23.7c-25.9 0-47.1-21.2-47.1-47.1s21.2-47.1 47.1-47.1h117.8c25.9 0 47.1 21.2 47.1 47.1s-21.2 47.1-47.1 47.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

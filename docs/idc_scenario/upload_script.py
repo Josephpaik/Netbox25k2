@@ -148,6 +148,40 @@ class NetBoxUploader:
 
         raise Exception(f"{endpoint}에서 '{field_name}={value}' 객체를 찾을 수 없습니다.")
 
+    def resolve_interface(self, device_interface: str) -> int:
+        """
+        Device:Interface 형식의 문자열을 인터페이스 ID로 변환합니다.
+
+        Args:
+            device_interface: "Device:Interface" 형식 (예: "SMS-WEB01:eno1")
+
+        Returns:
+            인터페이스 ID
+        """
+        if ':' not in device_interface:
+            raise Exception(f"잘못된 assigned_object 형식: {device_interface} (Device:Interface 형식이어야 함)")
+
+        device_name, interface_name = device_interface.split(':', 1)
+
+        # 캐시 키 생성
+        cache_key = f"interface:{device_name}:{interface_name}"
+        if cache_key in self.created_objects:
+            return self.created_objects[cache_key]['id']
+
+        # 인터페이스 조회
+        url = f"{self.api_url}/dcim/interfaces/"
+        params = {'device': device_name, 'name': interface_name}
+
+        response = requests.get(url, headers=self.headers, params=params, timeout=10)
+
+        if response.status_code == 200:
+            results = response.json().get('results', [])
+            if results:
+                self.created_objects[cache_key] = results[0]
+                return results[0]['id']
+
+        raise Exception(f"인터페이스를 찾을 수 없습니다: {device_name}:{interface_name}")
+
     def process_csv_row(self, endpoint: str, row: Dict[str, str]) -> Dict[str, Any]:
         """
         CSV 행 데이터를 API 데이터로 변환합니다.
@@ -219,6 +253,18 @@ class NetBoxUploader:
             # Tags 처리 (쉼표로 구분)
             elif key == 'tags':
                 data[key] = [{'name': tag.strip()} for tag in value.split(',') if tag.strip()]
+
+            # assigned_object 처리 (Device:Interface 형식)
+            elif key == 'assigned_object':
+                if value and ':' in value:
+                    interface_id = self.resolve_interface(value)
+                    data['assigned_object_type'] = 'dcim.interface'
+                    data['assigned_object_id'] = interface_id
+
+            # assigned_object_type, assigned_object_id는 assigned_object에서 처리되므로 스킵
+            elif key in ('assigned_object_type', 'assigned_object_id'):
+                # assigned_object 필드가 있으면 그쪽에서 처리하므로 스킵
+                pass
 
             else:
                 data[key] = value

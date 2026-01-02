@@ -1,0 +1,152 @@
+site_name: NetBox 한국어 문서
+site_dir: netbox/project-static/docs-ko
+site_url: https://docs.netbox.dev/ko/
+repo_name: netbox-community/netbox
+repo_url: https://github.com/netbox-community/netbox
+theme:
+  name: material
+  custom_dir: docs/_theme/
+  language: ko
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - content.code.copy
+    - navigation.footer
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/lightbulb-outline
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/lightbulb
+        name: 라이트 모드로 전환
+plugins:
+  - search:
+      lang: ko
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["netbox"]
+          options:
+            docstring_options:
+              warn_missing_types: false
+            heading_level: 3
+            members_order: source
+            show_root_heading: true
+            show_root_full_path: false
+            show_root_toc_entry: false
+            show_source: false
+extra:
+  build_public: !ENV BUILD_PUBLIC
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/netbox-community/netbox
+    - icon: fontawesome/brands/slack
+      link: https://netdev.chat/
+  alternate:
+    - name: English
+      link: https://docs.netbox.dev/
+      lang: en
+    - name: 한국어
+      link: https://docs.netbox.dev/ko/
+      lang: ko
+extra_css:
+    - extra.css
+markdown_extensions:
+    - admonition
+    - attr_list
+    - footnotes
+    - md_in_html
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.tabbed:
+        alternate_style: true
+nav:
+    - 소개: 'introduction_ko.md'
+    - 기능:
+        - 시설: 'features-ko/facilities.md'
+        - 장비 및 케이블링: 'features-ko/devices-cabling.md'
+        - 전력 추적: 'features-ko/power-tracking.md'
+        - IPAM: 'features-ko/ipam.md'
+        - VLAN 관리: 'features-ko/vlan-management.md'
+        - L2VPN & 오버레이: 'features-ko/l2vpn-overlay.md'
+        - 회선: 'features-ko/circuits.md'
+        - 무선: 'features-ko/wireless.md'
+        - 가상화: 'features-ko/virtualization.md'
+        - VPN 터널: 'features-ko/vpn-tunnels.md'
+        - 테넌시: 'features-ko/tenancy.md'
+        - 연락처: 'features-ko/contacts.md'
+        - 검색: 'features-ko/search.md'
+        - 컨텍스트 데이터: 'features-ko/context-data.md'
+        - 구성 렌더링: 'features-ko/configuration-rendering.md'
+        - 동기화 데이터: 'features-ko/synchronized-data.md'
+        - 변경 로깅: 'features-ko/change-logging.md'
+        - 저널링: 'features-ko/journaling.md'
+        - 이벤트 규칙: 'features-ko/event-rules.md'
+        - 사용자 설정: 'features-ko/user-preferences.md'
+        - 알림: 'features-ko/notifications.md'
+        - 백그라운드 작업: 'features-ko/background-jobs.md'
+        - 인증 및 권한: 'features-ko/authentication-permissions.md'
+        - API 및 통합: 'features-ko/api-integration.md'
+        - 커스터마이징: 'features-ko/customization.md'
+    - 설치 및 업그레이드:
+        - NetBox 설치: 'installation-ko/index.md'
+        - 1. PostgreSQL: 'installation-ko/1-postgresql.md'
+        - 2. Redis: 'installation-ko/2-redis.md'
+        - 3. NetBox: 'installation-ko/3-netbox.md'
+        - 4a. Gunicorn: 'installation-ko/4a-gunicorn.md'
+        - 5. HTTP 서버: 'installation-ko/5-http-server.md'
+        - NetBox 업그레이드: 'installation-ko/upgrading.md'
+    - 시작하기:
+        - 계획: 'getting-started-ko/planning.md'
+        - 데이터 입력: 'getting-started-ko/populating-data.md'
+    - 구성:
+        - NetBox 구성: 'configuration-ko/index.md'
+        - 필수 파라미터: 'configuration-ko/required-parameters.md'
+        - 시스템: 'configuration-ko/system.md'
+        - 보안: 'configuration-ko/security.md'
+        - GraphQL API: 'configuration-ko/graphql-api.md'
+        - 원격 인증: 'configuration-ko/remote-authentication.md'
+        - 데이터 및 유효성 검사: 'configuration-ko/data-validation.md'
+        - 기본값: 'configuration-ko/default-values.md'
+        - 오류 보고: 'configuration-ko/error-reporting.md'
+        - 플러그인: 'configuration-ko/plugins.md'
+        - 기타: 'configuration-ko/miscellaneous.md'
+        - 개발: 'configuration-ko/development.md'
+    - 커스터마이징:
+        - 커스텀 필드: 'customization-ko/custom-fields.md'
+        - 커스텀 링크: 'customization-ko/custom-links.md'
+        - 커스텀 유효성 검사: 'customization-ko/custom-validation.md'
+        - 익스포트 템플릿: 'customization-ko/export-templates.md'
+        - 리포트: 'customization-ko/reports.md'
+        - 커스텀 스크립트: 'customization-ko/custom-scripts.md'
+    - 통합:
+        - REST API: 'integrations-ko/rest-api.md'
+        - GraphQL API: 'integrations-ko/graphql-api.md'
+        - 웹훅: 'integrations-ko/webhooks.md'
+        - 동기화 데이터: 'integrations-ko/synchronized-data.md'
+        - Prometheus 메트릭: 'integrations-ko/prometheus-metrics.md'
+    - 관리:
+        - 인증:
+            - 개요: 'administration-ko/authentication/overview.md'
+            - Google: 'administration-ko/authentication/google.md'
+            - Microsoft Entra ID: 'administration-ko/authentication/microsoft-entra-id.md'
+            - Okta: 'administration-ko/authentication/okta.md'
+        - 권한: 'administration-ko/permissions.md'
+        - 오류 보고: 'administration-ko/error-reporting.md'
+        - NetBox 복제: 'administration-ko/replicating-netbox.md'
+        - NetBox Shell: 'administration-ko/netbox-shell.md'
+    - IDC 시나리오:
+        - 소개: 'idc_scenario/README.md'
+        - 사용 가이드: 'idc_scenario/USAGE_GUIDE.md'
+    - 참고 자료:
+        - macOS 설치 가이드: 'NetBox macOS 설치 및 사용 가이드 (한글).md'
