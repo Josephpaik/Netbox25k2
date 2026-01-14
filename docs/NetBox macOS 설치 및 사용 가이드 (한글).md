@@ -1,14 +1,20 @@
-# NetBox macOS 설치 및 사용 가이드 (한글)
-MACOS_INSTALLATION_TUTORIAL_KR.md  2025.10.23
+# NetBox macOS/Linux 설치 및 사용 가이드 (한글)
+INSTALLATION_TUTORIAL_KR.md  2025.01.14
 ## 목차
 - [소개](#소개)
 - [시스템 요구사항](#시스템-요구사항)
-- [1단계: 사전 준비](#1단계-사전-준비)
-- [2단계: 데이터베이스 및 Redis 설치](#2단계-데이터베이스-및-redis-설치)
-- [3단계: NetBox 설치](#3단계-netbox-설치)
+- [macOS 설치](#macos-설치)
+  - [1단계: 사전 준비](#1단계-사전-준비)
+  - [2단계: 데이터베이스 및 Redis 설치](#2단계-데이터베이스-및-redis-설치)
+  - [3단계: NetBox 설치](#3단계-netbox-설치)
+- [Linux 설치 (Ubuntu/Debian)](#linux-설치-ubuntudebian)
+  - [L1단계: 사전 준비](#l1단계-사전-준비)
+  - [L2단계: 데이터베이스 및 Redis 설치](#l2단계-데이터베이스-및-redis-설치)
+  - [L3단계: NetBox 설치 및 venv 설정](#l3단계-netbox-설치-및-venv-설정)
 - [4단계: NetBox 설정](#4단계-netbox-설정)
 - [5단계: 데이터베이스 초기화](#5단계-데이터베이스-초기화)
 - [6단계: NetBox 실행](#6단계-netbox-실행)
+- [start.sh 스크립트 사용법](#startsh-스크립트-사용법)
 - [주요 기능 사용 가이드](#주요-기능-사용-가이드)
 - [문제 해결](#문제-해결)
 
@@ -33,6 +39,10 @@ MACOS_INSTALLATION_TUTORIAL_KR.md  2025.10.23
 - **메모리**: 최소 4GB RAM 권장
 
 ---
+
+## macOS 설치
+
+macOS 환경에서 Homebrew를 사용하여 NetBox를 설치합니다.
 
 ## 1단계: 사전 준비
 
@@ -166,6 +176,162 @@ pip install -r requirements.txt
 # 설치 확인 (5-10분 소요)
 pip list | grep Django
 # Django가 목록에 나타나면 성공
+```
+
+---
+
+## Linux 설치 (Ubuntu/Debian)
+
+Ubuntu 20.04/22.04/24.04 또는 Debian 11/12 환경에서 NetBox를 설치합니다.
+
+## L1단계: 사전 준비
+
+### L1.1 시스템 패키지 업데이트
+
+```bash
+# 시스템 패키지 업데이트
+sudo apt update && sudo apt upgrade -y
+```
+
+### L1.2 Python 3.10+ 설치
+
+```bash
+# Python 버전 확인
+python3 --version
+
+# Python 3.10 이상이 아니라면 (Ubuntu 22.04+는 기본 포함):
+sudo apt install -y python3 python3-pip python3-venv python3-dev
+```
+
+### L1.3 필수 도구 설치
+
+```bash
+# 빌드 도구 및 필수 패키지 설치
+sudo apt install -y build-essential libxml2-dev libxslt1-dev libffi-dev \
+    libpq-dev libssl-dev zlib1g-dev git pkg-config
+```
+
+---
+
+## L2단계: 데이터베이스 및 Redis 설치
+
+### L2.1 PostgreSQL 설치 및 설정
+
+```bash
+# PostgreSQL 설치
+sudo apt install -y postgresql postgresql-contrib
+
+# PostgreSQL 서비스 시작 및 활성화
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+
+# 설치 확인
+psql --version
+```
+
+### L2.2 NetBox용 데이터베이스 생성
+
+```bash
+# PostgreSQL에 postgres 사용자로 접속
+sudo -u postgres psql
+
+# PostgreSQL 프롬프트에서 다음 명령어를 하나씩 실행:
+```
+
+```sql
+-- NetBox용 데이터베이스 생성
+CREATE DATABASE netbox;
+
+-- NetBox용 사용자 생성 (비밀번호는 원하는 것으로 변경하세요)
+CREATE USER netbox WITH PASSWORD 'netbox123';
+
+-- 권한 부여
+ALTER DATABASE netbox OWNER TO netbox;
+GRANT ALL PRIVILEGES ON DATABASE netbox TO netbox;
+
+-- 종료
+\q
+```
+
+### L2.3 Redis 설치 및 시작
+
+```bash
+# Redis 설치
+sudo apt install -y redis-server
+
+# Redis 서비스 시작 및 활성화
+sudo systemctl start redis-server
+sudo systemctl enable redis-server
+
+# Redis 작동 확인
+redis-cli ping
+# 응답: PONG
+```
+
+---
+
+## L3단계: NetBox 설치 및 venv 설정
+
+### L3.1 NetBox 소스코드 다운로드
+
+```bash
+# 작업 디렉토리로 이동 (원하는 위치로 변경 가능)
+cd /opt
+# 또는 홈 디렉토리 사용 시:
+# cd ~
+
+# NetBox 저장소 클론 (권한 필요 시 sudo 사용)
+sudo git clone https://github.com/netbox-community/netbox.git
+sudo chown -R $USER:$USER netbox
+cd netbox
+
+# 최신 stable 버전으로 체크아웃 (또는 현재 브랜치 사용)
+git checkout master
+```
+
+> **참고**: `/opt` 대신 홈 디렉토리(`~`)를 사용해도 됩니다.
+
+### L3.2 Python 가상환경(venv) 생성
+
+```bash
+# 가상환경 생성
+python3 -m venv venv
+
+# 가상환경 활성화
+source venv/bin/activate
+
+# 프롬프트가 (venv)로 시작하면 성공!
+# 예: (venv) user@hostname:/opt/netbox$
+```
+
+> **중요**: 이후 모든 Python 관련 명령어는 가상환경이 활성화된 상태에서 실행해야 합니다.
+
+### L3.3 Python 의존성 설치
+
+```bash
+# pip 업그레이드
+pip install --upgrade pip wheel
+
+# NetBox 의존성 설치 (5-10분 소요)
+pip install -r requirements.txt
+
+# 설치 확인
+pip list | grep Django
+# Django가 목록에 나타나면 성공
+```
+
+### L3.4 가상환경 관리 팁
+
+```bash
+# 가상환경 비활성화
+deactivate
+
+# 가상환경 재활성화 (NetBox 디렉토리에서)
+source venv/bin/activate
+
+# 가상환경 내 Python 확인
+which python
+# 출력: /opt/netbox/venv/bin/python
 ```
 
 ---
@@ -339,7 +505,127 @@ python3 manage.py rqworker
 http://localhost:8000
 ```
 
-**로그인 화면이 나타나면 성공!** 🎉
+**로그인 화면이 나타나면 성공!**
+
+---
+
+## start.sh 스크립트 사용법
+
+이 저장소에는 NetBox와 MkDocs 문서 서버를 쉽게 관리할 수 있는 `start.sh` 스크립트가 포함되어 있습니다.
+
+### 사전 요구사항
+
+스크립트를 사용하기 전에 다음이 완료되어 있어야 합니다:
+
+1. Python 가상환경(venv)이 생성되어 있어야 함
+2. 필요한 의존성이 설치되어 있어야 함
+3. NetBox 설정 파일(`configuration.py`)이 구성되어 있어야 함
+4. 데이터베이스 마이그레이션이 완료되어 있어야 함
+
+```bash
+# 가상환경이 없다면 먼저 생성
+python3 -m venv venv
+
+# 의존성 설치
+./venv/bin/pip install -r requirements.txt
+```
+
+### 스크립트 실행 권한 부여
+
+```bash
+# 실행 권한 부여 (최초 1회)
+chmod +x start.sh
+```
+
+### 기본 사용법
+
+#### 모든 서버 시작 (NetBox + MkDocs)
+
+```bash
+./start.sh
+```
+
+두 서버가 백그라운드에서 시작됩니다:
+- **NetBox**: http://127.0.0.1:8000
+- **MkDocs**: http://127.0.0.1:8001/ko/
+
+#### NetBox 서버만 시작
+
+```bash
+./start.sh netbox
+```
+
+#### MkDocs 문서 서버만 시작
+
+```bash
+./start.sh docs
+# 또는
+./start.sh mkdocs
+```
+
+### 서버 관리
+
+#### 서버 상태 확인
+
+```bash
+./start.sh status
+```
+
+출력 예시:
+```
+=== Server Status ===
+NetBox:  Running (PID: 12345) - http://127.0.0.1:8000
+MkDocs:  Running (PID: 12346) - http://127.0.0.1:8001/ko/
+```
+
+#### 모든 서버 중지
+
+```bash
+./start.sh stop
+```
+
+#### 서버 재시작
+
+```bash
+./start.sh restart
+```
+
+#### 도움말 보기
+
+```bash
+./start.sh help
+```
+
+### 로그 파일 확인
+
+서버 실행 중 문제가 발생하면 로그 파일을 확인합니다:
+
+```bash
+# NetBox 로그 확인
+tail -f /tmp/netbox_server.log
+
+# MkDocs 로그 확인
+tail -f /tmp/mkdocs_server.log
+```
+
+### 포트 정보
+
+| 서버 | 포트 | URL |
+|------|------|-----|
+| NetBox | 8000 | http://127.0.0.1:8000 |
+| MkDocs | 8001 | http://127.0.0.1:8001/ko/ |
+
+### 명령어 요약
+
+| 명령어 | 설명 |
+|--------|------|
+| `./start.sh` | NetBox + MkDocs 모두 시작 |
+| `./start.sh netbox` | NetBox만 시작 |
+| `./start.sh docs` | MkDocs만 시작 |
+| `./start.sh stop` | 모든 서버 중지 |
+| `./start.sh status` | 서버 상태 확인 |
+| `./start.sh restart` | 모든 서버 재시작 |
+| `./start.sh help` | 도움말 표시 |
 
 ---
 
@@ -1038,9 +1324,10 @@ NetBox는 매우 강력한 도구이며, 이 가이드는 시작점에 불과합
 
 ---
 
-**문서 작성일**: 2025-10-22
+**문서 작성일**: 2025-01-14 (업데이트)
 **NetBox 버전**: 4.4.4
 **작성자**: Claude Code
+**업데이트 내용**: Linux 설치 가이드 및 start.sh 사용법 추가
 
 질문이나 문제가 있다면 NetBox 커뮤니티나 GitHub Issues를 활용하세요!
 
