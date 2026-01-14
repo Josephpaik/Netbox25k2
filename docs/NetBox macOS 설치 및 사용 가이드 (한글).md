@@ -1,5 +1,5 @@
 # NetBox macOS/Linux 설치 및 사용 가이드 (한글)
-INSTALLATION_TUTORIAL_KR.md  2025.01.14
+INSTALLATION_TUTORIAL_KR.md  2026.01.14
 ## 목차
 - [소개](#소개)
 - [시스템 요구사항](#시스템-요구사항)
